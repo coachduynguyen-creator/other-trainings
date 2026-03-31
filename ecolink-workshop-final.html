@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nâng Tầm Vị Thế Tư Vấn — Ecolink × Coach Duy Nguyễn</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;overflow:hidden;width:100vw;height:100vh;}
+.slide{display:none;width:100vw;height:100vh;position:relative;overflow:hidden;padding-bottom:36px;flex-direction:column;justify-content:center;align-items:center;}
+.slide.active{display:flex;}
+
+.bg-cover,.bg-closing{background-color:#1B3A5C;background-image:radial-gradient(rgba(196,164,78,0.18) 1.3px,transparent 1.3px);background-size:30px 30px;}
+.bg-cover::before,.bg-closing::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(27,58,92,0.55) 25%,transparent 65%);pointer-events:none;z-index:1;}
+.bg-agenda{background-color:#2e1c06;background-image:radial-gradient(rgba(196,164,78,0.20) 1.3px,transparent 1.3px);background-size:30px 30px;}
+.bg-agenda::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(46,28,6,0.5) 25%,transparent 65%);pointer-events:none;z-index:1;}
+.bg-section{background-color:#f0e4c8;background-image:linear-gradient(rgba(168,128,32,0.14) 1px,transparent 1px),linear-gradient(90deg,rgba(168,128,32,0.14) 1px,transparent 1px);background-size:40px 40px;}
+.bg-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,#f0e4c8 30%,transparent 65%);pointer-events:none;z-index:1;}
+.bg-content{background:#ffffff;background-image:radial-gradient(rgba(168,128,32,0.22) 1.5px,transparent 1.5px);background-size:28px 28px;}
+.bg-content::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,#ffffff 30%,transparent 65%);pointer-events:none;z-index:1;}
+.bg-practice{background:#fffbf2;background-image:radial-gradient(rgba(168,128,32,0.18) 1.4px,transparent 1.4px);background-size:28px 28px;}
+.bg-practice::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,#fffbf2 32%,transparent 66%);pointer-events:none;z-index:1;}
+.border-practice{position:absolute;inset:0;border:2px solid rgba(196,164,78,0.4);pointer-events:none;z-index:5;}
+
+/* ── INTERACTIVE SLIDE SYSTEM ─────────────────────────── */
+.bg-interactive{background-color:#1c0f3a;background-image:radial-gradient(rgba(124,92,191,0.22) 1.4px,transparent 1.4px);background-size:28px 28px;}
+.bg-interactive::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(28,15,58,0.5) 25%,transparent 68%);pointer-events:none;z-index:1;}
+.border-interactive{position:absolute;inset:0;border:2px solid rgba(124,92,191,0.45);pointer-events:none;z-index:5;}
+.border-interactive::after{content:'';position:absolute;inset:-2px;border-radius:0;border:2px solid transparent;background:linear-gradient(135deg,rgba(124,92,191,0.7),transparent 40%,transparent 60%,rgba(196,164,78,0.5)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;animation:rotBorder 4s linear infinite;}
+@keyframes rotBorder{0%{opacity:1}50%{opacity:0.4}100%{opacity:1}}
+
+.footer-interactive{position:absolute;bottom:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:2.5px;font-variant:small-caps;text-transform:uppercase;color:rgba(196,164,78,0.85);background:rgba(28,15,58,0.85);border-top:1px solid rgba(124,92,191,0.3);z-index:10;}
+
+/* Type badges */
+.ibadge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:8px;font-size:12px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;}
+.ibadge-discuss{background:rgba(99,179,237,0.15);border:1.5px solid rgba(99,179,237,0.45);color:#63b3ed;}
+.ibadge-survey{background:rgba(246,173,85,0.15);border:1.5px solid rgba(246,173,85,0.45);color:#f6ad55;}
+.ibadge-game{background:rgba(154,117,234,0.18);border:1.5px solid rgba(154,117,234,0.5);color:#9a75ea;}
+.ibadge-practice{background:rgba(104,211,145,0.15);border:1.5px solid rgba(104,211,145,0.45);color:#68d391;}
+
+.itime{display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);padding:5px 14px;border-radius:20px;margin-left:12px;}
+
+/* Interactive content boxes */
+.ibox{background:rgba(255,255,255,0.05);border:1.5px solid rgba(124,92,191,0.3);border-radius:12px;padding:14px 18px;}
+.ibox-answer{background:rgba(255,255,255,0.03);border:2px dashed rgba(124,92,191,0.35);border-radius:12px;padding:14px 18px;text-align:center;font-size:28px;font-weight:900;color:rgba(154,117,234,0.4);}
+.istep{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,0.04);border:1px solid rgba(124,92,191,0.2);border-radius:10px;padding:13px 18px;margin-bottom:8px;}
+.istep:last-child{margin-bottom:0;}
+.istep-num{width:30px;height:30px;border-radius:50%;background:rgba(124,92,191,0.3);border:1.5px solid rgba(124,92,191,0.6);color:#c4b5fd;font-weight:900;font-size:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.istep-txt{font-size:17px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.55;padding-top:3px;}
+.istep-note{font-size:13px;color:rgba(196,164,78,0.75);font-style:italic;margin-top:4px;}
+.icap{font-size:19px;font-weight:700;color:#C4A44E;font-style:italic;margin-top:14px;text-align:center;}
+
+.bar-top{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent 6%,#C4A44E 24%,#C4A44E 76%,transparent 94%);z-index:5;}
+.bar-left{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,transparent 5%,#C4A44E 22%,#C4A44E 78%,transparent 95%);z-index:5;}
+.bar-right{position:absolute;right:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,transparent 5%,rgba(196,164,78,0.3) 22%,rgba(196,164,78,0.3) 78%,transparent 95%);z-index:5;}
+
+.footer-dark{position:absolute;bottom:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:2.5px;font-variant:small-caps;text-transform:uppercase;color:#C4A44E;background:rgba(0,0,0,0.3);border-top:1px solid rgba(196,164,78,0.2);z-index:10;}
+.footer-light{position:absolute;bottom:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:2.5px;font-variant:small-caps;text-transform:uppercase;color:#8a6010;background:rgba(255,255,255,0.92);border-top:1px solid rgba(168,128,32,0.2);z-index:10;}
+.footer-parchment{position:absolute;bottom:0;left:0;right:0;height:36px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:2.5px;font-variant:small-caps;text-transform:uppercase;color:#8a6010;background:rgba(240,228,200,0.92);border-top:1px solid rgba(168,128,32,0.2);z-index:10;}
+
+.nav{position:fixed;bottom:44px;right:24px;display:flex;align-items:center;gap:10px;z-index:200;}
+.nav-counter{font-size:12px;color:#aaa;}
+.nav-btn{background:rgba(168,128,32,0.08);border:1px solid rgba(168,128,32,0.28);color:#8a6010;padding:6px 14px;border-radius:6px;font-size:13px;cursor:pointer;transition:.18s;}
+.nav-btn:hover{background:rgba(168,128,32,0.17);}
+
+.content{position:relative;z-index:3;width:100%;max-width:1120px;padding:0 44px;}
+.card{background:#ffffff;border:1.5px solid rgba(168,128,32,0.2);border-top:3px solid #9a7218;border-radius:14px;padding:26px 22px 20px;box-shadow:0 4px 22px rgba(0,0,0,0.09),0 1px 4px rgba(0,0,0,0.06);position:relative;overflow:hidden;}
+.card-dark{background:rgba(255,255,255,0.06);border:1.5px solid rgba(196,164,78,0.25);border-top:3px solid #C4A44E;border-radius:14px;padding:26px 22px 20px;position:relative;overflow:hidden;}
+.cl{font-size:11px;letter-spacing:2.5px;color:#8a6010;text-transform:uppercase;font-weight:900;margin-bottom:7px;}
+.cl-d{font-size:11px;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;font-weight:900;margin-bottom:7px;}
+.ct{font-size:17px;font-weight:900;color:#0d0d0d;margin-bottom:7px;line-height:1.3;text-transform:uppercase;}
+.ct-d{font-size:17px;font-weight:900;color:#ffffff;margin-bottom:7px;line-height:1.3;text-transform:uppercase;}
+.cb{font-size:15px;color:#2a2a2a;line-height:1.6;font-weight:500;}
+.cb-d{font-size:15px;color:rgba(255,255,255,0.82);line-height:1.6;font-weight:500;}
+.cnum{position:absolute;bottom:-4px;right:12px;font-size:80px;font-weight:900;color:rgba(168,128,32,0.07);line-height:1;pointer-events:none;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+.flow{display:flex;flex-direction:column;gap:9px;}
+.frow{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1.5px solid rgba(168,128,32,0.18);border-radius:12px;padding:14px 18px;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
+.fnum{font-size:15px;font-weight:900;color:#C4A44E;width:32px;height:32px;border-radius:8px;background:rgba(196,164,78,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ftxt{font-size:16px;font-weight:600;color:#0d0d0d;line-height:1.5;padding-top:2px;}
+.fsub{font-size:14px;color:#444;margin-top:3px;line-height:1.4;font-weight:500;}
+
+.steps{background:#fff;border-radius:12px;border:1.5px solid rgba(168,128,32,0.18);box-shadow:0 2px 14px rgba(0,0,0,0.08);overflow:hidden;}
+.srow{display:flex;gap:16px;align-items:flex-start;padding:13px 20px;border-bottom:1px solid rgba(168,128,32,0.12);}
+.srow:last-child{border-bottom:none;}
+.snum{width:30px;height:30px;border-radius:50%;background:#7a5008;color:#fff;font-weight:900;font-size:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.stxt{font-size:17px;color:#111;line-height:1.55;font-weight:600;padding-top:2px;}
+.snote{font-size:13px;color:#666;font-style:italic;margin-top:3px;}
+.pcap{font-size:20px;font-weight:700;color:#4a3008;font-style:italic;margin-top:12px;}
+
+.trow{display:flex;align-items:flex-start;gap:18px;background:rgba(255,255,255,0.07);border:1.5px solid rgba(196,164,78,0.22);border-radius:12px;padding:15px 20px;margin-bottom:10px;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.tnum{font-size:28px;font-weight:900;color:#C4A44E;min-width:30px;line-height:1.1;flex-shrink:0;}
+.ttxt{font-size:18px;font-weight:700;color:#ffffff;line-height:1.5;}
+.tgold{color:#D4B46E;}
+
+.badge-p{display:inline-flex;align-items:center;background:#6a3e06;color:#fff;font-size:12px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;padding:7px 18px;border-radius:6px;box-shadow:0 3px 12px rgba(106,62,6,0.35);}
+.badge-t{display:inline-flex;align-items:center;font-size:13px;font-weight:800;color:#6a3e06;border:1.5px solid rgba(106,62,6,0.3);padding:5px 13px;border-radius:8px;background:rgba(168,128,32,0.08);margin-left:10px;}
+
+.gold-line{width:60px;height:2px;background:#C4A44E;margin:0 auto;}
+.eyebrow{font-size:22px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#5a3a06;margin-bottom:16px;}
+.eyebrow-d{font-size:22px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:18px;}
+.concl{font-size:20px;font-weight:900;color:#5a3006;margin-top:12px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.88)}to{opacity:1;transform:scale(1)}}
+@keyframes slideR{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideL{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes glowBreath{0%,100%{box-shadow:0 0 10px 2px rgba(196,164,78,0.28),0 6px 24px rgba(27,58,92,0.25)}50%{box-shadow:0 0 32px 10px rgba(196,164,78,0.62),0 8px 36px rgba(27,58,92,0.42)}}
+@keyframes pulseRing{0%,100%{box-shadow:0 0 0 0 rgba(196,164,78,0.55)}50%{box-shadow:0 0 0 14px rgba(196,164,78,0)}}
+@keyframes pulseOp{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes lineGrow{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+@keyframes ringExpand{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+
+.a1{animation:fadeUp .45s .1s ease both;opacity:0;}
+.a2{animation:fadeUp .45s .25s ease both;opacity:0;}
+.a3{animation:fadeUp .45s .4s ease both;opacity:0;}
+.a4{animation:fadeUp .45s .55s ease both;opacity:0;}
+.a5{animation:fadeUp .45s .7s ease both;opacity:0;}
+.aL{animation:slideL .5s .2s ease both;opacity:0;}
+.aR{animation:slideR .5s .1s ease both;opacity:0;}
+.aS{animation:scaleIn .5s .1s ease both;opacity:0;}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- S1: COVER -->
+<!-- ============================================================ -->
+<div class="slide active bg-cover" id="s1">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="text-align:center;max-width:860px;padding:0 48px;">
+    <div class="gold-line a1" style="margin-bottom:22px;"></div>
+    <div class="a2" style="font-size:12px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:16px;">2 Buổi Workshop Offline · Ngày 01/04 · 9:00–12:00 &amp; 14:00–17:00</div>
+    <div class="a3" style="font-size:50px;font-weight:900;color:#ffffff;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;">
+      Nâng Tầm Vị Thế Tư Vấn<br><span style="color:#D4B46E;">Dẫn Dắt Để Khách Hàng</span><br>Tự Ra Quyết Định
+    </div>
+    <div class="a4" style="width:80px;height:2px;background:linear-gradient(90deg,transparent,#C4A44E,transparent);margin:22px auto;"></div>
+    <div class="a5" style="font-size:18px;color:rgba(255,255,255,0.78);font-style:italic;font-weight:500;line-height:1.65;">Chuẩn hóa tư duy · Nâng chuẩn quy trình · Tăng tỷ lệ chốt không cần giảm giá</div>
+    <div class="gold-line a5" style="margin-top:22px;"></div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN × ECOLINK</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S2: THẢO LUẬN MỞ ĐẦU -->
+<!-- ============================================================ -->
+<div class="slide bg-interactive" id="s2">
+  <div class="border-interactive"></div>
+  <div class="content" style="position:relative;z-index:3;text-align:center;">
+    <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:24px;" class="a1">
+      <div class="ibadge ibadge-discuss">💬 Thảo Luận Nhóm</div>
+      <div class="itime">5 Phút</div>
+    </div>
+    <div class="a2" style="font-size:16px;font-weight:700;color:rgba(99,179,237,0.8);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">Khách hàng hỏi:</div>
+    <div class="a3" style="font-size:42px;font-weight:900;color:#ffffff;line-height:1.2;max-width:820px;margin:0 auto;">
+      "Vì sao anh/chị nên cho con học tiếng Anh tại <span style="color:#f6ad55;">Ecolink</span> mà không phải nơi khác?"
+    </div>
+    <div class="a4" style="margin-top:32px;display:inline-block;background:rgba(255,255,255,0.06);border:1.5px solid rgba(99,179,237,0.3);border-radius:12px;padding:14px 32px;">
+      <div style="font-size:22px;font-weight:700;color:rgba(255,255,255,0.85);font-style:italic;">Bạn sẽ trả lời thế nào?</div>
+    </div>
+  </div>
+  <div class="footer-interactive">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S3: KHẢO SÁT NHANH -->
+<!-- ============================================================ -->
+<div class="slide bg-interactive" id="s3">
+  <div class="border-interactive"></div>
+  <div class="content" style="position:relative;z-index:3;display:flex;align-items:center;gap:36px;">
+    <div style="flex:1;">
+      <div class="a1" style="display:flex;align-items:center;gap:0;margin-bottom:20px;">
+        <div class="ibadge ibadge-survey">📊 Khảo Sát Nhanh</div>
+        <div class="itime">Giơ tay</div>
+      </div>
+      <div class="a2" style="font-size:26px;font-weight:900;color:#ffffff;line-height:1.2;margin-bottom:18px;">Bạn cảm thấy bao nhiêu % khách hàng mình tiếp cận đều <span style="color:#f6ad55;">kết thúc trong im lặng?</span></div>
+      <div class="a3" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px;">
+        <div style="background:rgba(255,255,255,0.04);border:1.5px solid rgba(124,92,191,0.2);border-radius:12px;padding:16px 8px;text-align:center;">
+          <div style="font-size:30px;font-weight:900;color:rgba(196,164,78,0.3);">20%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1.5px solid rgba(124,92,191,0.3);border-radius:12px;padding:16px 8px;text-align:center;">
+          <div style="font-size:30px;font-weight:900;color:rgba(196,164,78,0.45);">40%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1.5px solid rgba(124,92,191,0.4);border-radius:12px;padding:16px 8px;text-align:center;">
+          <div style="font-size:30px;font-weight:900;color:rgba(196,164,78,0.65);">60%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(124,92,191,0.5);border-radius:12px;padding:16px 8px;text-align:center;">
+          <div style="font-size:30px;font-weight:900;color:#C4A44E;">80%</div>
+        </div>
+        <div style="background:rgba(196,164,78,0.12);border:2px solid #C4A44E;border-radius:12px;padding:16px 8px;text-align:center;animation:glowBreath 3s 1s ease-in-out infinite;">
+          <div style="font-size:30px;font-weight:900;color:#D4B46E;">99%</div>
+        </div>
+      </div>
+      <div class="a4" style="background:rgba(246,173,85,0.1);border:1.5px solid rgba(246,173,85,0.35);border-radius:12px;padding:14px 20px;">
+        <div style="font-size:17px;font-weight:900;color:#ffffff;text-align:center;">Ngay cả khi <span style="color:#f6ad55;">giảm giá để giữ khách</span> nhưng vẫn mất?</div>
+      </div>
+    </div>
+    <!-- Illustration: người cầm điện thoại chờ -->
+    <div class="a3" style="flex-shrink:0;">
+      <svg viewBox="0 0 240 280" width="210" height="250" fill="none">
+        <circle cx="120" cy="72" r="28" fill="rgba(124,92,191,0.25)" stroke="rgba(124,92,191,0.5)" stroke-width="1.5" style="animation:fadeUp .4s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M109 80 Q120 75 131 80" stroke="rgba(196,164,78,0.4)" stroke-width="2" stroke-linecap="round" fill="none" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="113" cy="68" r="2.5" fill="rgba(196,164,78,0.5)" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="127" cy="68" r="2.5" fill="rgba(196,164,78,0.5)" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="96" y="102" width="48" height="60" rx="11" fill="rgba(124,92,191,0.2)" stroke="rgba(124,92,191,0.4)" stroke-width="1.5" style="animation:fadeUp .4s .4s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="135" y="115" width="22" height="34" rx="5" fill="rgba(255,255,255,0.08)" stroke="rgba(196,164,78,0.3)" stroke-width="1.5" style="animation:fadeUp .4s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="138" y="119" width="16" height="22" rx="3" fill="rgba(124,92,191,0.15)" style="animation:fadeIn .3s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="103" y="160" width="12" height="36" rx="6" fill="rgba(124,92,191,0.2)" style="animation:fadeUp .4s .45s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="122" y="160" width="12" height="36" rx="6" fill="rgba(124,92,191,0.2)" style="animation:fadeUp .4s .48s ease both;opacity:0;animation-fill-mode:both;"/>
+        <ellipse cx="185" cy="100" rx="44" ry="25" fill="rgba(28,15,58,0.8)" stroke="rgba(154,117,234,0.5)" stroke-width="1.5" style="animation:scaleIn .4s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <polygon points="153,113 163,113 157,124" fill="rgba(28,15,58,0.8)" stroke="rgba(154,117,234,0.4)" stroke-width="1" style="animation:fadeIn .3s .85s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="185" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#9a75ea" style="animation:fadeIn .4s .9s ease both;opacity:0;animation-fill-mode:both;">IM LẶNG</text>
+        <text x="185" y="111" text-anchor="middle" font-size="18" fill="rgba(154,117,234,0.7)" style="animation:fadeIn .4s .95s ease both;opacity:0;animation-fill-mode:both;">...</text>
+        <circle cx="170" cy="228" r="5" fill="rgba(196,164,78,0.3)" style="animation:pulseOp 1.2s .1s ease-in-out infinite;"/>
+        <circle cx="185" cy="228" r="5" fill="rgba(196,164,78,0.5)" style="animation:pulseOp 1.2s .35s ease-in-out infinite;"/>
+        <circle cx="200" cy="228" r="5" fill="rgba(196,164,78,0.7)" style="animation:pulseOp 1.2s .6s ease-in-out infinite;"/>
+        <text x="120" y="254" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(196,164,78,0.7)" letter-spacing="1.5" style="animation:fadeIn .4s 1s ease both;opacity:0;animation-fill-mode:both;">KHÁCH BIẾN MẤT</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-interactive">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S4: TUYÊN BỐ — CÁCH BÁN HÀNG CŨ ĐÃ KHÔNG CÒN HIỆU QUẢ -->
+<!-- ============================================================ -->
+<div class="slide bg-cover" id="s4">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;text-align:center;max-width:900px;margin:0 auto;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:28px;">Sự Thật Cần Nhìn Thẳng</div>
+    <div class="a2" style="font-size:58px;font-weight:900;color:#ffffff;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;">
+      Cách tư vấn bán hàng cũ<br><span style="color:#D4B46E;">đã không còn hiệu quả.</span>
+    </div>
+    <div class="a3" style="width:80px;height:3px;background:linear-gradient(90deg,transparent,#C4A44E,transparent);margin:28px auto;"></div>
+    <div class="a4" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:800px;margin:0 auto;">
+      <div style="background:rgba(255,255,255,0.06);border:1.5px solid rgba(196,164,78,0.2);border-radius:12px;padding:18px 16px;">
+        <div style="font-size:28px;font-weight:900;color:#D4B46E;margin-bottom:8px;">80%</div>
+        <div style="font-size:15px;color:rgba(255,255,255,0.78);line-height:1.5;">tư vấn kết thúc bằng<br>"để suy nghĩ thêm"</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1.5px solid rgba(196,164,78,0.2);border-radius:12px;padding:18px 16px;">
+        <div style="font-size:28px;font-weight:900;color:#D4B46E;margin-bottom:8px;">Giảm giá</div>
+        <div style="font-size:15px;color:rgba(255,255,255,0.78);line-height:1.5;">không còn là lý do đủ để phụ huynh quyết định</div>
+      </div>
+      <div style="background:rgba(196,164,78,0.1);border:2px solid rgba(196,164,78,0.4);border-radius:12px;padding:18px 16px;">
+        <div style="font-size:28px;font-weight:900;color:#D4B46E;margin-bottom:8px;">Vị thế</div>
+        <div style="font-size:15px;color:rgba(255,255,255,0.82);line-height:1.5;">mới là thứ tạo ra sự khác biệt</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S5: CÁCH BÁN HÀNG CŨ VS CỐ VẤN TIN CẬY -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s5">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Cách Bán Hàng Cũ Đã Không Còn Hiệu Quả</div>
+    <div class="a2 g2" style="gap:20px;margin-top:6px;">
+      <div>
+        <div style="background:#f8f5ee;border-radius:14px;padding:22px 24px;border:1.5px solid rgba(168,128,32,0.15);height:100%;">
+          <div style="font-size:18px;font-weight:900;color:#1B3A5C;margin-bottom:14px;line-height:1.3;">Khách hàng không thiếu thông tin về sản phẩm.</div>
+          <div style="font-size:22px;font-weight:900;color:#8a6010;line-height:1.35;">Họ cần người giúp họ ra quyết định đúng.</div>
+        </div>
+      </div>
+      <div>
+        <div style="background:#1B3A5C;border-radius:14px;padding:22px 24px;border:2px solid rgba(196,164,78,0.3);position:relative;overflow:hidden;height:100%;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:13px;font-weight:900;letter-spacing:2px;color:#C4A44E;text-transform:uppercase;margin-bottom:12px;">Chân dung Cố Vấn Tin Cậy</div>
+            <div class="flow" style="gap:8px;">
+              <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:#C4A44E;flex-shrink:0;"></div><div style="font-size:16px;color:#fff;font-weight:600;">Khách chủ động tìm đến bạn</div></div>
+              <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:#C4A44E;flex-shrink:0;"></div><div style="font-size:16px;color:#fff;font-weight:600;">Khách hỏi ý kiến trước khi quyết định</div></div>
+              <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:#C4A44E;flex-shrink:0;"></div><div style="font-size:16px;color:#fff;font-weight:600;">Khách quay lại nhiều lần</div></div>
+              <div style="display:flex;align-items:center;gap:10px;"><div style="width:6px;height:6px;border-radius:50%;background:#C4A44E;flex-shrink:0;"></div><div style="font-size:16px;color:#fff;font-weight:600;">Khách giới thiệu cho người khác</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a3" style="margin-top:16px;background:#fffbf0;border-radius:12px;padding:16px 22px;border:1.5px solid rgba(196,164,78,0.3);border-left:5px solid #C4A44E;text-align:center;">
+      <div style="font-size:20px;font-weight:900;color:#1B3A5C;">Cố vấn tin cậy không cố gắng bán. Họ <span style="color:#8a6010;">đồng hành trong quyết định</span> của khách hàng.</div>
+    </div>
+    <div class="a4 concl" style="text-align:center;margin-top:10px;">Chuyển hóa từ Sales thành Cố Vấn Tin Cậy của khách hàng.</div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S6: MỤC TIÊU CHƯƠNG TRÌNH -->
+<!-- ============================================================ -->
+<div class="slide bg-agenda" id="s6">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:16px;">Mục Tiêu Của Chương Trình</div>
+    <div class="a2 flow" style="gap:12px;">
+      <div class="frow" style="background:rgba(255,255,255,0.06);border-color:rgba(196,164,78,0.2);">
+        <div class="fnum" style="background:rgba(196,164,78,0.2);color:#D4B46E;font-size:18px;width:40px;height:40px;">01</div>
+        <div class="ftxt" style="color:#fff;font-size:20px;">Bán hàng bằng vị thế</div>
+      </div>
+      <div class="frow" style="background:rgba(255,255,255,0.06);border-color:rgba(196,164,78,0.2);">
+        <div class="fnum" style="background:rgba(196,164,78,0.2);color:#D4B46E;font-size:18px;width:40px;height:40px;">02</div>
+        <div class="ftxt" style="color:#fff;font-size:20px;">Thấu hiểu tâm lý khách hàng</div>
+      </div>
+      <div class="frow" style="background:rgba(255,255,255,0.06);border-color:rgba(196,164,78,0.2);">
+        <div class="fnum" style="background:rgba(196,164,78,0.2);color:#D4B46E;font-size:18px;width:40px;height:40px;">03</div>
+        <div class="ftxt" style="color:#fff;font-size:20px;">Chuyển hóa tư duy để tạo kết quả mới</div>
+      </div>
+      <div class="frow" style="background:rgba(255,255,255,0.06);border-color:rgba(196,164,78,0.3);">
+        <div class="fnum" style="background:rgba(196,164,78,0.25);color:#D4B46E;font-size:18px;width:40px;height:40px;">04</div>
+        <div class="ftxt" style="color:#fff;font-size:20px;">Quy trình dẫn quyết định 3 Điểm Chạm</div>
+      </div>
+      <div class="frow" style="background:rgba(196,164,78,0.08);border-color:rgba(196,164,78,0.35);">
+        <div class="fnum" style="background:#C4A44E;color:#1B3A5C;font-size:18px;width:40px;height:40px;">05</div>
+        <div class="ftxt" style="color:#D4B46E;font-size:20px;">Phương pháp xử lý từ chối REFLECT</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S6b: BÁN HÀNG NHƯ DẠY TRẺ NHỎ -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s6b">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:48px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:14px;">Cố Vấn Tin Cậy · Tư Duy Nền</div>
+      <div class="a2" style="font-size:46px;font-weight:900;color:#0d0d0d;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;margin-bottom:16px;">Hãy bán hàng<br>như <span style="color:#8a6010;">dạy trẻ nhỏ.</span></div>
+      <div class="a3" style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;background:#f8f5ee;border-radius:10px;padding:14px 16px;border-left:4px solid #C4A44E;">
+          <div style="font-size:22px;flex-shrink:0;">👩‍👧</div>
+          <div>
+            <div style="font-size:15px;font-weight:900;color:#1B3A5C;margin-bottom:3px;">Dạy trẻ nhỏ</div>
+            <div style="font-size:14px;color:#555;line-height:1.5;">Bạn không ép con hiểu. Bạn hỏi, dẫn dắt, kiên nhẫn chờ con tự nhận ra. Khi con tự làm được, con mới thực sự học được.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;background:#1B3A5C;border-radius:10px;padding:14px 16px;border:1.5px solid rgba(196,164,78,0.25);position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.1) 1.2px,transparent 1.2px);background-size:16px 16px;z-index:0;"></div>
+          <div style="font-size:22px;flex-shrink:0;position:relative;z-index:1;">🤝</div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:15px;font-weight:900;color:#D4B46E;margin-bottom:3px;">Tư vấn với vị thế cố vấn</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.5;">Bạn không ép khách quyết định. Bạn hỏi, dẫn dắt, kiên nhẫn để khách tự nhận ra. Khi họ tự quyết, họ mới thực sự cam kết.</div>
+          </div>
+        </div>
+      </div>
+      <div class="a4" style="margin-top:14px;font-size:18px;font-weight:900;color:#8a6010;font-style:italic;">"Người nói nhiều không phải người bán hàng giỏi. Người đặt câu hỏi đúng mới là người dẫn đường."</div>
+    </div>
+    <div class="a3" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 320 360" width="300" height="340" fill="none">
+        <!-- Người lớn (cố vấn) bên trái -->
+        <!-- Thân người lớn -->
+        <ellipse cx="100" cy="130" rx="28" ry="38" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2" style="animation:fadeUp .5s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Đầu người lớn -->
+        <circle cx="100" cy="84" r="22" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2" style="animation:scaleIn .4s .2s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Mặt người lớn: nụ cười -->
+        <path d="M91 88 Q100 96 109 88" stroke="#C4A44E" stroke-width="2" stroke-linecap="round" fill="none" style="animation:fadeIn .4s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Tay người lớn chỉ -->
+        <path d="M128 115 Q160 105 175 100" stroke="#C4A44E" stroke-width="2.5" stroke-linecap="round" style="animation:slideL .5s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="178" cy="99" r="5" fill="#C4A44E" style="animation:scaleIn .3s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Label người lớn -->
+        <text x="100" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s .4s ease both;opacity:0;animation-fill-mode:both;">CỐ VẤN</text>
+        <!-- Speech bubble từ người lớn -->
+        <rect x="60" y="28" width="82" height="36" rx="10" fill="#fffbf0" stroke="#C4A44E" stroke-width="1.5" style="animation:fadeIn .4s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <polygon points="95,64 105,64 100,74" fill="#fffbf0" stroke="#C4A44E" stroke-width="1.5" style="animation:fadeIn .3s .75s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="101" y="44" text-anchor="middle" font-size="10" fill="#8a6010" font-weight="700" style="animation:fadeIn .4s .8s ease both;opacity:0;animation-fill-mode:both;">"Điều gì</text>
+        <text x="101" y="57" text-anchor="middle" font-size="10" fill="#8a6010" font-weight="700" style="animation:fadeIn .4s .85s ease both;opacity:0;animation-fill-mode:both;">con muốn?"</text>
+        <!-- Trẻ nhỏ (khách hàng) bên phải -->
+        <circle cx="235" cy="200" r="18" fill="#f0e4c8" stroke="rgba(168,128,32,0.4)" stroke-width="1.5" style="animation:scaleIn .4s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <ellipse cx="235" cy="234" rx="20" ry="28" fill="#f0e4c8" stroke="rgba(168,128,32,0.4)" stroke-width="1.5" style="animation:fadeUp .4s .55s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Mặt trẻ: đang nghĩ -->
+        <circle cx="229" cy="197" r="2" fill="#8a6010" style="animation:fadeIn .3s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="241" cy="197" r="2" fill="#8a6010" style="animation:fadeIn .3s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M229 205 Q235 210 241 205" stroke="#8a6010" stroke-width="1.5" stroke-linecap="round" fill="none" style="animation:fadeIn .3s .75s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="235" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s .65s ease both;opacity:0;animation-fill-mode:both;">KHÁCH HÀNG</text>
+        <!-- Thought bubble từ trẻ: "tôi tự nhận ra!" -->
+        <circle cx="255" cy="165" r="5" fill="#fffbf0" stroke="rgba(196,164,78,0.4)" stroke-width="1" style="animation:scaleIn .3s .9s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="265" cy="153" r="8" fill="#fffbf0" stroke="rgba(196,164,78,0.4)" stroke-width="1" style="animation:scaleIn .3s .95s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="244" y="118" width="66" height="30" rx="8" fill="#1B3A5C" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s 1s ease both;opacity:0;animation-fill-mode:both;animation:scaleIn .4s 1s ease both,glowBreath 3s 1.5s ease-in-out infinite;"/>
+        <text x="277" y="131" text-anchor="middle" font-size="9" font-weight="700" fill="#D4B46E" style="animation:fadeIn .3s 1.1s ease both;opacity:0;animation-fill-mode:both;">TÔI TỰ</text>
+        <text x="277" y="143" text-anchor="middle" font-size="9" font-weight="700" fill="#D4B46E" style="animation:fadeIn .3s 1.1s ease both;opacity:0;animation-fill-mode:both;">NHẬN RA!</text>
+        <!-- Arrow / connection giữa 2 người -->
+        <path d="M128 160 Q180 145 217 180" stroke="rgba(196,164,78,0.3)" stroke-width="1.5" stroke-dasharray="4 3" fill="none" style="animation:fadeIn .6s .65s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Đường kẻ dưới -->
+        <line x1="40" y1="310" x2="280" y2="310" stroke="rgba(168,128,32,0.15)" stroke-width="1"/>
+        <text x="160" y="330" text-anchor="middle" font-size="11" fill="#8a6010" letter-spacing="1" font-weight="700" style="animation:fadeIn .4s 1.2s ease both;opacity:0;animation-fill-mode:both;">DẪN DẮT · KHÔNG ÉP BUỘC</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S7: 5 CẤP ĐỘ NGƯỜI BÁN HÀNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s7">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Bán Hàng Bằng Vị Thế · Cố Vấn Tin Cậy</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:14px;">5 cấp độ của người bán hàng</div>
+    <div class="a3" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+      <div style="background:#f5f2e8;border:1.5px solid rgba(168,128,32,0.2);border-radius:12px;padding:16px 12px;text-align:center;">
+        <div style="font-size:22px;font-weight:900;color:rgba(168,128,32,0.35);margin-bottom:6px;">01</div>
+        <div style="font-size:13px;font-weight:900;color:#7a6840;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Cung cấp thông tin</div>
+        <div style="font-size:14px;color:#555;line-height:1.45;font-weight:500;">Khách hỏi giá xong biến mất</div>
+      </div>
+      <div style="background:#f5f2e8;border:1.5px solid rgba(168,128,32,0.25);border-radius:12px;padding:16px 12px;text-align:center;">
+        <div style="font-size:22px;font-weight:900;color:rgba(168,128,32,0.45);margin-bottom:6px;">02</div>
+        <div style="font-size:13px;font-weight:900;color:#7a6840;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Trình bày giải pháp</div>
+        <div style="font-size:14px;color:#555;line-height:1.45;font-weight:500;">Khách nói "nghe cũng hợp lý"</div>
+      </div>
+      <div style="background:#fef5d8;border:1.5px solid rgba(196,164,78,0.35);border-radius:12px;padding:16px 12px;text-align:center;">
+        <div style="font-size:22px;font-weight:900;color:#8a6010;margin-bottom:6px;">03</div>
+        <div style="font-size:13px;font-weight:900;color:#5a3a06;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Tạo giao dịch</div>
+        <div style="font-size:14px;color:#5a4020;line-height:1.45;font-weight:500;">Phải chốt rất vất vả</div>
+      </div>
+      <div style="background:#fff8e0;border:1.5px solid rgba(196,164,78,0.5);border-radius:12px;padding:16px 12px;text-align:center;">
+        <div style="font-size:22px;font-weight:900;color:#7a5008;margin-bottom:6px;">04</div>
+        <div style="font-size:13px;font-weight:900;color:#5a3006;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Tư vấn giải pháp</div>
+        <div style="font-size:14px;color:#5a3a06;line-height:1.45;font-weight:500;">Cuộc tư vấn tốt nhưng khách vẫn "suy nghĩ thêm"</div>
+      </div>
+      <div style="background:#1B3A5C;border:2px solid #C4A44E;border-radius:12px;padding:16px 12px;text-align:center;position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.32);animation:glowBreath 3s 1s ease-in-out infinite;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.15) 1.2px,transparent 1.2px);background-size:16px 16px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:10px;font-weight:900;color:#C4A44E;letter-spacing:2px;margin-bottom:6px;animation:pulseOp 2.2s ease-in-out infinite;">BÁN BẰNG VỊ THẾ</div>
+          <div style="font-size:22px;font-weight:900;color:#D4B46E;margin-bottom:6px;">05</div>
+          <div style="font-size:13px;font-weight:900;color:#ffffff;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Dẫn dắt quyết định</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.92);line-height:1.45;font-weight:500;">Khách hỏi: "Theo anh/chị tôi nên làm thế nào?"</div>
+        </div>
+      </div>
+    </div>
+    <div class="a4" style="margin-top:14px;background:#fffbf0;border-radius:10px;padding:12px 20px;border:1.5px solid rgba(196,164,78,0.3);text-align:center;">
+      <div style="font-size:17px;font-weight:900;color:#5a3006;">Bạn tự đánh giá thẳng thắn: Mình đang ở cấp độ nào?</div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S8: SECTION OPENER — TÂM LÝ KHÁCH HÀNG -->
+<!-- ============================================================ -->
+<div class="slide bg-section" id="s8">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:16px;">Nội Dung Chính · 02</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
+      <div class="a2" style="font-size:62px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Thấu Hiểu<br><span style="color:#8a6010;">Tâm Lý</span><br>Khách Hàng</div>
+      <div class="a2" style="font-size:260px;font-weight:900;line-height:0.85;color:rgba(168,128,32,0.18);pointer-events:none;letter-spacing:-12px;flex-shrink:0;margin-top:-10px;">02</div>
+    </div>
+    <div class="a3" style="width:100%;height:2px;background:linear-gradient(90deg,#9a7218,rgba(168,128,32,0.08));margin:22px 0 20px;"></div>
+    <div class="a4" style="font-size:20px;font-style:italic;font-weight:500;color:#3a3a3a;line-height:1.55;">Đằng sau mỗi câu nói là một nỗi lo chưa được giải quyết.</div>
+  </div>
+  <div class="footer-parchment">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S9: MINI GAME DỊCH NGÔN NGỮ -->
+<!-- ============================================================ -->
+<div class="slide bg-interactive" id="s9">
+  <div class="border-interactive"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div style="display:flex;align-items:center;margin-bottom:16px;" class="a1">
+      <div class="ibadge ibadge-game">🎮 Mini Game</div>
+      <div class="itime">10 Phút · Thảo Luận Nhóm</div>
+    </div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#ffffff;margin-bottom:4px;">Dịch ngôn ngữ khách hàng</div>
+    <div class="a2" style="font-size:15px;color:rgba(196,164,78,0.75);margin-bottom:16px;font-style:italic;">Mỗi nhóm "dịch" câu khách nói sang nhu cầu thật bên dưới</div>
+    <div class="a3" style="display:grid;grid-template-columns:1fr 40px 1fr;gap:8px;align-items:center;">
+      <div class="ibox" style="font-size:16px;font-weight:700;color:#fff;">"Để tôi suy nghĩ thêm"</div>
+      <div style="text-align:center;font-size:20px;color:#9a75ea;font-weight:900;">→</div>
+      <div class="ibox-answer">?</div>
+
+      <div class="ibox" style="font-size:16px;font-weight:700;color:#fff;">"Bên khác rẻ hơn"</div>
+      <div style="text-align:center;font-size:20px;color:#9a75ea;font-weight:900;">→</div>
+      <div class="ibox-answer">?</div>
+
+      <div class="ibox" style="font-size:16px;font-weight:700;color:#fff;">"Chỉ muốn làm thử một cái nhỏ"</div>
+      <div style="text-align:center;font-size:20px;color:#9a75ea;font-weight:900;">→</div>
+      <div class="ibox-answer">?</div>
+
+      <div class="ibox" style="font-size:16px;font-weight:700;color:#fff;">"Lần trước làm chỗ khác không hiệu quả"</div>
+      <div style="text-align:center;font-size:20px;color:#9a75ea;font-weight:900;">→</div>
+      <div class="ibox-answer">?</div>
+    </div>
+  </div>
+  <div class="footer-interactive">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S10: GIẢI MÃ TÂM LÝ KHÁCH HÀNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s10">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:flex-start;gap:28px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Thấu Hiểu Tâm Lý Khách Hàng</div>
+      <div class="a2" style="font-size:20px;font-weight:900;color:#0d0d0d;margin-bottom:12px;font-style:italic;">Đằng sau mỗi câu nói là một nỗi lo chưa được giải quyết</div>
+      <div class="a3" style="display:grid;grid-template-columns:1fr 28px 1fr;gap:6px;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:15px;font-weight:700;color:#1B3A5C;background:#f5f2e8;border-radius:9px;padding:10px 14px;border-left:4px solid rgba(168,128,32,0.4);">"Để tôi suy nghĩ thêm"</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A5C;background:#f5f2e8;border-radius:9px;padding:10px 14px;border-left:4px solid rgba(168,128,32,0.4);">"Bên khác rẻ hơn"</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A5C;background:#f5f2e8;border-radius:9px;padding:10px 14px;border-left:4px solid rgba(168,128,32,0.4);">"Chỉ muốn làm thử một cái nhỏ"</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A5C;background:#f5f2e8;border-radius:9px;padding:10px 14px;border-left:4px solid rgba(168,128,32,0.4);">"Không cần tư vấn, tôi biết mình cần gì"</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A5C;background:#f5f2e8;border-radius:9px;padding:10px 14px;border-left:4px solid rgba(168,128,32,0.4);">"Lần trước không hiệu quả"</div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-around;align-items:center;">
+          <div style="font-size:16px;color:#C4A44E;font-weight:900;">→</div>
+          <div style="font-size:16px;color:#C4A44E;font-weight:900;">→</div>
+          <div style="font-size:16px;color:#C4A44E;font-weight:900;">→</div>
+          <div style="font-size:16px;color:#C4A44E;font-weight:900;">→</div>
+          <div style="font-size:16px;color:#C4A44E;font-weight:900;">→</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:14px;font-weight:600;color:#0d0d0d;background:#fffbf0;border-radius:9px;padding:10px 14px;border-left:4px solid #C4A44E;">Chưa đủ tin tưởng hoặc chưa thấy giá trị rõ ràng</div>
+          <div style="font-size:14px;font-weight:600;color:#0d0d0d;background:#fffbf0;border-radius:9px;padding:10px 14px;border-left:4px solid #C4A44E;">Chưa thấy sự khác biệt đủ để đầu tư cao hơn</div>
+          <div style="font-size:14px;font-weight:600;color:#0d0d0d;background:#fffbf0;border-radius:9px;padding:10px 14px;border-left:4px solid #C4A44E;">Sợ rủi ro, chưa đủ niềm tin để đầu tư lớn</div>
+          <div style="font-size:14px;font-weight:600;color:#0d0d0d;background:#fffbf0;border-radius:9px;padding:10px 14px;border-left:4px solid #C4A44E;">Đã từng bị tư vấn kiểu bán hàng, đang tự bảo vệ</div>
+          <div style="font-size:14px;font-weight:600;color:#0d0d0d;background:#fffbf0;border-radius:9px;padding:10px 14px;border-left:4px solid #C4A44E;">Đang cho bạn cơ hội nhưng kèm theo cảnh báo</div>
+        </div>
+      </div>
+      <div class="a4 concl" style="text-align:center;margin-top:10px;">Người tư vấn giỏi chẩn đoán đúng nỗi lo trước khi đưa ra giải pháp.</div>
+    </div>
+    <!-- Iceberg illustration -->
+    <div class="a2" style="flex-shrink:0;position:relative;z-index:3;margin-top:28px;">
+      <svg viewBox="0 0 200 310" width="175" height="270" fill="none">
+        <!-- Water line -->
+        <rect x="0" y="145" width="200" height="165" rx="0" fill="rgba(27,58,92,0.08)"/>
+        <line x1="0" y1="145" x2="200" y2="145" stroke="rgba(196,164,78,0.4)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <!-- Above water: phần nổi nhỏ -->
+        <polygon points="80,20 120,20 140,145 60,145" fill="#f5f2e8" stroke="rgba(168,128,32,0.35)" stroke-width="1.5" style="animation:fadeUp .5s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="100" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s .5s ease both;opacity:0;animation-fill-mode:both;">CÂU NÓI</text>
+        <text x="100" y="105" text-anchor="middle" font-size="9" fill="#8a6010" style="animation:fadeIn .4s .5s ease both;opacity:0;animation-fill-mode:both;">10%</text>
+        <!-- Below water: phần chìm lớn -->
+        <polygon points="60,145 140,145 175,290 25,290" fill="#1B3A5C" stroke="rgba(196,164,78,0.3)" stroke-width="1.5" style="animation:fadeUp .5s .4s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="100" y="195" text-anchor="middle" font-size="10" font-weight="900" fill="#C4A44E" letter-spacing="1" style="animation:fadeIn .4s .7s ease both;opacity:0;animation-fill-mode:both;">NỖI LO</text>
+        <text x="100" y="210" text-anchor="middle" font-size="9" fill="rgba(196,164,78,0.7)" style="animation:fadeIn .4s .75s ease both;opacity:0;animation-fill-mode:both;">THẬT SỰ</text>
+        <text x="100" y="228" text-anchor="middle" font-size="20" font-weight="900" fill="#D4B46E" style="animation:fadeIn .4s .8s ease both;opacity:0;animation-fill-mode:both;">90%</text>
+        <!-- Glowing core -->
+        <circle cx="100" cy="258" r="18" fill="rgba(196,164,78,0.15)" stroke="#C4A44E" stroke-width="1.5" style="animation:pulseRing 2.5s 1s ease-in-out infinite;"/>
+        <text x="100" y="263" text-anchor="middle" font-size="16" fill="#C4A44E" style="animation:pulseOp 2s ease-in-out infinite;">★</text>
+        <!-- Label trên -->
+        <text x="100" y="138" text-anchor="middle" font-size="9" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s .5s ease both;opacity:0;animation-fill-mode:both;">PHẦN NỔI</text>
+        <!-- Label dưới -->
+        <text x="100" y="302" text-anchor="middle" font-size="9" font-weight="700" fill="#C4A44E" letter-spacing="1" style="animation:fadeIn .4s .8s ease both;opacity:0;animation-fill-mode:both;">PHẦN CHÌM</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S11: KHÁCH HÀNG MUA GÌ THỰC RA -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s11">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Thấu Hiểu Tâm Lý Khách Hàng</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:18px;">Khách hàng không mua sản phẩm/dịch vụ</div>
+    <div class="a3 g2">
+      <div style="background:#1B3A5C;border-radius:14px;overflow:hidden;">
+        <div style="background:rgba(0,0,0,0.2);padding:14px 20px;">
+          <div style="font-size:13px;font-weight:900;letter-spacing:2px;color:rgba(255,255,255,0.6);text-transform:uppercase;">Chúng ta hay nghĩ họ mua</div>
+        </div>
+        <div style="padding:16px 20px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.08) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;">
+            <div style="font-size:18px;color:rgba(255,255,255,0.6);font-weight:500;padding:12px 16px;background:rgba(255,255,255,0.05);border-radius:8px;">Dịch vụ tốt nhất</div>
+            <div style="font-size:18px;color:rgba(255,255,255,0.6);font-weight:500;padding:12px 16px;background:rgba(255,255,255,0.05);border-radius:8px;">Công nghệ hiện đại</div>
+            <div style="font-size:18px;color:rgba(255,255,255,0.6);font-weight:500;padding:12px 16px;background:rgba(255,255,255,0.05);border-radius:8px;">Giá hợp lý</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#1B3A5C;border:2px solid #C4A44E;border-radius:14px;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.3);">
+        <div style="background:rgba(196,164,78,0.15);padding:14px 20px;">
+          <div style="font-size:13px;font-weight:900;letter-spacing:2px;color:#D4B46E;text-transform:uppercase;">Thực ra họ mua</div>
+        </div>
+        <div style="padding:16px 20px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;">
+            <div style="font-size:18px;color:#fff;font-weight:700;padding:12px 16px;background:rgba(196,164,78,0.1);border-radius:8px;border-left:3px solid #C4A44E;">Cảm giác được hiểu</div>
+            <div style="font-size:18px;color:#fff;font-weight:700;padding:12px 16px;background:rgba(196,164,78,0.1);border-radius:8px;border-left:3px solid #C4A44E;">Sự an tâm khi quyết định</div>
+            <div style="font-size:18px;color:#fff;font-weight:700;padding:12px 16px;background:rgba(196,164,78,0.1);border-radius:8px;border-left:3px solid #C4A44E;">Người đủ tầm để tin tưởng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S12: 3 LÝ DO KHÁCH HÀNG TRÌ HOÃN -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s12">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">3 Lý Do Khách Hàng Trì Hoãn Khiến Tư Vấn Mất Deal</div>
+    <div class="a2" style="font-size:24px;font-weight:900;color:#0d0d0d;margin-bottom:18px;">Tại sao khách hàng trì hoãn quyết định?</div>
+    <div class="a3" style="display:flex;justify-content:center;gap:0;margin-bottom:16px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:center;">
+          <div style="text-align:center;">
+            <div style="width:100px;height:100px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;"><div style="font-size:20px;font-weight:900;color:#fff;text-align:center;">KHÔNG<br>CẦN</div></div>
+            <div style="font-size:14px;color:#555;line-height:1.4;max-width:160px;margin:0 auto;">Chưa thấy vấn đề đủ cấp bách để giải quyết ngay</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="width:120px;height:120px;border-radius:50%;background:#C4A44E;border:3px solid #8a6010;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 8px 28px rgba(196,164,78,0.35);animation:glowBreath 3s ease-in-out infinite;">
+              <div style="font-size:18px;font-weight:900;color:#1B3A5C;text-align:center;">KHÔNG<br>QUYẾT</div>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div style="width:100px;height:100px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;"><div style="font-size:20px;font-weight:900;color:#fff;text-align:center;">KHÔNG<br>TIN</div></div>
+            <div style="font-size:14px;color:#555;line-height:1.4;max-width:160px;margin:0 auto;">Chưa đủ niềm tin vào giải pháp hoặc người tư vấn</div>
+          </div>
+        </div>
+        <div style="text-align:center;max-width:200px;">
+          <div style="width:100px;height:100px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;"><div style="font-size:20px;font-weight:900;color:#fff;text-align:center;">KHÔNG<br>SẴN</div></div>
+          <div style="font-size:14px;color:#555;line-height:1.4;">Chưa sẵn sàng về tâm lý, thời điểm, nguồn lực</div>
+        </div>
+      </div>
+    </div>
+    <div class="a4" style="background:#1B3A5C;border-radius:12px;padding:14px 22px;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+      <div style="position:relative;z-index:1;font-size:18px;font-weight:900;color:#fff;">Khách hàng không hành động vì <span style="color:#D4B46E;">sợ rủi ro nhưng không nói ra.</span></div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S13: 3 TẦNG KHÁCH HÀNG NÓI / NGHĨ / CẢM -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s13">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:36px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:12px;">Khách Hàng Nói Một Đằng Làm Một Nẻo</div>
+      <div class="a2" style="display:flex;flex-direction:column;gap:0;max-width:700px;">
+        <div style="background:#e8e4d4;border-radius:12px 12px 0 0;border:1.5px solid rgba(168,128,32,0.2);padding:16px 24px;">
+          <div style="font-size:12px;font-weight:900;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;">Tầng 1 · Khách hàng NÓI</div>
+          <div style="font-size:18px;font-weight:700;color:#666;">"Để suy nghĩ thêm" · "Giá hơi cao" · "Hỏi thêm người khác"</div>
+        </div>
+        <div style="background:#fef5d8;border:1.5px solid rgba(196,164,78,0.35);border-top:none;padding:16px 24px;">
+          <div style="font-size:12px;font-weight:900;color:#8a6010;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;">Tầng 2 · Khách hàng NGHĨ</div>
+          <div style="font-size:18px;font-weight:700;color:#5a3a06;">"Chưa chắc đây là quyết định đúng với con tôi / người như tôi"</div>
+        </div>
+        <div style="background:#1B3A5C;border-radius:0 0 12px 12px;border:2px solid #C4A44E;border-top:none;padding:18px 24px;position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.3);">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.13) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:12px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;animation:pulseOp 2.5s ease-in-out infinite;">Tầng 3 · Khách hàng CẢM THẤY</div>
+            <div style="font-size:18px;font-weight:700;color:#ffffff;">"Tôi cần cảm thấy an toàn với người này trước"</div>
+          </div>
+        </div>
+      </div>
+      <div class="a3 concl" style="margin-top:14px;">Cố vấn tin cậy làm việc ở <span style="color:#C4A44E;">Tầng 3.</span></div>
+    </div>
+    <!-- Illustration: ổ khóa 3 lớp -->
+    <div class="a2" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 220 300" width="200" height="270" fill="none">
+        <!-- Outer ring - lớp ngoài cùng (mờ) -->
+        <circle cx="110" cy="150" r="95" fill="rgba(168,128,32,0.05)" stroke="rgba(168,128,32,0.2)" stroke-width="2" stroke-dasharray="6 4" style="animation:ringExpand .5s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="110" y="60" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(168,128,32,0.5)" letter-spacing="1" style="animation:fadeIn .4s .4s ease both;opacity:0;animation-fill-mode:both;">NÓI</text>
+        <!-- Middle ring -->
+        <circle cx="110" cy="150" r="65" fill="rgba(196,164,78,0.07)" stroke="rgba(196,164,78,0.35)" stroke-width="2" style="animation:ringExpand .5s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="110" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s .6s ease both;opacity:0;animation-fill-mode:both;">NGHĨ</text>
+        <!-- Inner ring - tầng cảm xúc -->
+        <circle cx="110" cy="150" r="36" fill="rgba(27,58,92,0.1)" stroke="#1B3A5C" stroke-width="2.5" style="animation:ringExpand .5s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Lock shape at center -->
+        <rect x="94" y="148" width="32" height="24" rx="5" fill="#1B3A5C" style="animation:scaleIn .4s .9s ease both;opacity:0;animation-fill-mode:both;animation:scaleIn .4s .9s ease both,glowBreath 3s 1.4s ease-in-out infinite;"/>
+        <path d="M100 148 Q100 132 110 132 Q120 132 120 148" stroke="#C4A44E" stroke-width="2.5" fill="none" stroke-linecap="round" style="animation:fadeIn .4s 1s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="110" cy="160" r="4" fill="#C4A44E" style="animation:scaleIn .3s 1.1s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="110" y="185" text-anchor="middle" font-size="9" font-weight="700" fill="#1B3A5C" letter-spacing="1" style="animation:fadeIn .4s .85s ease both;opacity:0;animation-fill-mode:both;">CẢM THẤY</text>
+        <!-- Key -->
+        <g style="animation:slideL .5s 1.2s ease both;opacity:0;animation-fill-mode:both;">
+          <circle cx="162" cy="232" r="12" fill="none" stroke="#C4A44E" stroke-width="2"/>
+          <line x1="174" y1="232" x2="196" y2="232" stroke="#C4A44E" stroke-width="2" stroke-linecap="round"/>
+          <line x1="190" y1="232" x2="190" y2="240" stroke="#C4A44E" stroke-width="2" stroke-linecap="round"/>
+          <line x1="196" y1="232" x2="196" y2="238" stroke="#C4A44E" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <text x="175" y="258" text-anchor="middle" font-size="9" font-weight="700" fill="#8a6010" letter-spacing="1" style="animation:fadeIn .4s 1.3s ease both;opacity:0;animation-fill-mode:both;">CHÌA KHÓA</text>
+        <text x="175" y="270" text-anchor="middle" font-size="9" fill="#8a6010" style="animation:fadeIn .4s 1.35s ease both;opacity:0;animation-fill-mode:both;">= TIN TƯỞNG</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S14: SECTION OPENER — CHUYỂN HÓA TƯ DUY -->
+<!-- ============================================================ -->
+<div class="slide bg-section" id="s14">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:16px;">Nội Dung Chính · 03</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
+      <div class="a2" style="font-size:62px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Chuyển Hóa<br><span style="color:#8a6010;">Tư Duy</span><br>Kết Quả Mới</div>
+      <div class="a2" style="font-size:260px;font-weight:900;line-height:0.85;color:rgba(168,128,32,0.18);pointer-events:none;letter-spacing:-12px;flex-shrink:0;margin-top:-10px;">03</div>
+    </div>
+    <div class="a3" style="width:100%;height:2px;background:linear-gradient(90deg,#9a7218,rgba(168,128,32,0.08));margin:22px 0 20px;"></div>
+    <div class="a4" style="font-size:20px;font-style:italic;font-weight:500;color:#3a3a3a;line-height:1.55;">Không bán sản phẩm. Bán con đường.</div>
+  </div>
+  <div class="footer-parchment">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S15: KHÁCH HÀNG MUA NHÂN DẠNG -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!-- S15a: TƯ DUY 01 — KHÁCH HÀNG MUA NHÂN DẠNG -->
+<!-- ============================================================ -->
+<div class="slide bg-cover" id="s15a">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:48px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.65);text-transform:uppercase;margin-bottom:14px;">Tư Duy Mới · 01 / 03</div>
+      <div class="a2" style="font-size:52px;font-weight:900;color:#ffffff;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;">Khách hàng<br>không mua<br><span style="color:#D4B46E;">sản phẩm.</span></div>
+      <div class="a3" style="width:60px;height:2px;background:#C4A44E;margin:18px 0;"></div>
+      <div class="a3" style="font-size:28px;font-weight:900;color:#D4B46E;line-height:1.2;margin-bottom:14px;">Họ mua nhân dạng.</div>
+      <div class="a4" style="font-size:18px;color:rgba(255,255,255,0.78);line-height:1.65;font-weight:500;">Nhân dạng mới = Ưu tiên mới.<br>Khi phụ huynh thấy mình là "người mẹ/cha tốt luôn lo cho tương lai con", họ sẽ đầu tư vào điều đó.</div>
+    </div>
+    <div class="a3" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 340 340" width="320" height="320" fill="none">
+        <!-- Background circle -->
+        <circle cx="170" cy="170" r="155" fill="rgba(196,164,78,0.06)" stroke="rgba(196,164,78,0.15)" stroke-width="1.5"/>
+        <circle cx="170" cy="170" r="118" fill="rgba(196,164,78,0.04)" stroke="rgba(196,164,78,0.25)" stroke-width="1.5"/>
+        <!-- Mirror / reflection frame -->
+        <rect x="110" y="60" width="120" height="160" rx="60" ry="60" fill="none" stroke="#C4A44E" stroke-width="2.5" style="animation:fadeIn .6s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <rect x="118" y="68" width="104" height="144" rx="52" ry="52" fill="rgba(27,58,92,0.5)" stroke="rgba(196,164,78,0.2)" stroke-width="1"/>
+        <!-- Person silhouette CURRENT (faded) -->
+        <circle cx="170" cy="115" r="22" fill="rgba(196,164,78,0.18)" stroke="rgba(196,164,78,0.3)" stroke-width="1.5" style="animation:scaleIn .5s .4s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M140 175 Q140 145 170 145 Q200 145 200 175 L200 185 L140 185 Z" fill="rgba(196,164,78,0.18)" stroke="rgba(196,164,78,0.3)" stroke-width="1.5" style="animation:fadeUp .5s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Arrow down + transform -->
+        <line x1="170" y1="232" x2="170" y2="265" stroke="#C4A44E" stroke-width="2" stroke-dasharray="4 3" style="animation:fadeIn .4s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <polygon points="162,264 178,264 170,278" fill="#C4A44E" style="animation:fadeIn .4s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Person silhouette NEW (bright) -->
+        <circle cx="170" cy="300" r="16" fill="#C4A44E" style="animation:scaleIn .5s .9s ease both;opacity:0;animation-fill-mode:both;animation:scaleIn .5s .9s ease both,glowBreath 3s 1.5s ease-in-out infinite;"/>
+        <!-- Star / crown -->
+        <text x="170" y="222" text-anchor="middle" font-size="22" fill="#D4B46E" style="animation:fadeIn .4s .6s ease both;opacity:0;animation-fill-mode:both;">★</text>
+        <!-- Label: NHÂN DẠNG MỚI -->
+        <text x="170" y="332" text-anchor="middle" font-size="11" font-weight="700" fill="#C4A44E" letter-spacing="2" style="animation:fadeIn .4s 1s ease both;opacity:0;animation-fill-mode:both;">NHÂN DẠNG MỚI</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S15b: TƯ DUY 02 — BÁN CON ĐƯỜNG -->
+<!-- ============================================================ -->
+<div class="slide bg-cover" id="s15b">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:48px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.65);text-transform:uppercase;margin-bottom:14px;">Tư Duy Mới · 02 / 03</div>
+      <div class="a2" style="font-size:52px;font-weight:900;color:#ffffff;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;">Không bán<br><span style="color:#D4B46E;">sản phẩm.</span><br>Bán con đường.</div>
+      <div class="a3" style="width:60px;height:2px;background:#C4A44E;margin:18px 0;"></div>
+      <div class="a4" style="font-size:18px;color:rgba(255,255,255,0.78);line-height:1.65;font-weight:500;">Con đường = Rõ ràng = Tin tưởng.<br><br>Người bán sản phẩm khiến khách <em>suy nghĩ</em>.<br>Người bán con đường khiến khách <span style="color:#D4B46E;font-weight:700;">hành động.</span></div>
+    </div>
+    <div class="a3" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 340 340" width="320" height="320" fill="none">
+        <circle cx="170" cy="170" r="155" fill="rgba(196,164,78,0.05)" stroke="rgba(196,164,78,0.12)" stroke-width="1.5"/>
+        <!-- Road / path winding -->
+        <path d="M50 300 Q80 240 120 200 Q160 160 170 120 Q180 80 220 55" stroke="rgba(196,164,78,0.2)" stroke-width="18" stroke-linecap="round" fill="none" style="animation:fadeIn .4s .2s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M50 300 Q80 240 120 200 Q160 160 170 120 Q180 80 220 55" stroke="#C4A44E" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4" fill="none" style="animation:fadeIn .6s .4s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Milestone dots on path -->
+        <circle cx="95" cy="255" r="8" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2" style="animation:scaleIn .4s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="140" cy="185" r="8" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2" style="animation:scaleIn .4s .65s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="170" cy="120" r="8" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2" style="animation:scaleIn .4s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Destination star -->
+        <circle cx="220" cy="55" r="20" fill="#C4A44E" style="animation:scaleIn .5s 1s ease both;opacity:0;animation-fill-mode:both;animation:scaleIn .5s 1s ease both,glowBreath 3s 1.5s ease-in-out infinite;"/>
+        <text x="220" y="62" text-anchor="middle" font-size="20" fill="#1B3A5C" font-weight="900" style="animation:fadeIn .4s 1.1s ease both;opacity:0;animation-fill-mode:both;">★</text>
+        <!-- Person walking (simple) -->
+        <circle cx="50" cy="290" r="10" fill="rgba(196,164,78,0.4)" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Labels -->
+        <text x="50" y="320" text-anchor="middle" font-size="10" fill="rgba(196,164,78,0.6)" letter-spacing="1" style="animation:fadeIn .4s .4s ease both;opacity:0;animation-fill-mode:both;">BẮT ĐẦU</text>
+        <text x="220" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#C4A44E" letter-spacing="1" style="animation:fadeIn .4s 1.1s ease both;opacity:0;animation-fill-mode:both;">MỤC TIÊU</text>
+        <!-- Box: sản phẩm crossed out -->
+        <rect x="250" y="200" width="72" height="36" rx="8" fill="rgba(180,50,50,0.15)" stroke="rgba(180,50,50,0.3)" stroke-width="1.5" style="animation:fadeIn .4s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="286" y="223" text-anchor="middle" font-size="12" fill="rgba(180,50,50,0.7)" font-weight="700" style="animation:fadeIn .4s .6s ease both;opacity:0;animation-fill-mode:both;">SẢN PHẨM</text>
+        <line x1="252" y1="202" x2="320" y2="234" stroke="rgba(180,50,50,0.5)" stroke-width="2" style="animation:fadeIn .3s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Box: con đường -->
+        <rect x="250" y="250" width="72" height="36" rx="8" fill="rgba(196,164,78,0.15)" stroke="#C4A44E" stroke-width="1.5" style="animation:fadeIn .4s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <text x="286" y="273" text-anchor="middle" font-size="12" fill="#C4A44E" font-weight="900" style="animation:fadeIn .4s .9s ease both;opacity:0;animation-fill-mode:both;">CON ĐƯỜNG</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S15c: TƯ DUY 03 — BÁN BẰNG ẢNH HƯỞNG -->
+<!-- ============================================================ -->
+<div class="slide bg-cover" id="s15c">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:48px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.65);text-transform:uppercase;margin-bottom:14px;">Tư Duy Mới · 03 / 03 · Cốt Lõi</div>
+      <div class="a2" style="font-size:52px;font-weight:900;color:#ffffff;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;">Bán bằng<br><span style="color:#D4B46E;">ảnh hưởng.</span><br>Không dồn ép.</div>
+      <div class="a3" style="width:60px;height:2px;background:#C4A44E;margin:18px 0;"></div>
+      <div class="a4" style="font-size:18px;color:rgba(255,255,255,0.78);line-height:1.65;font-weight:500;">Khi bạn đặt câu hỏi đúng,<br>khách hàng tự phản chiếu.<br><br>Khi họ tự nhìn thấy, <span style="color:#D4B46E;font-weight:700;">họ tự quyết định.</span><br>Bạn không cần thuyết phục thêm.</div>
+    </div>
+    <div class="a3" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 340 340" width="320" height="320" fill="none">
+        <!-- Ripple rings from center — ảnh hưởng lan toa -->
+        <circle cx="170" cy="170" r="140" fill="none" stroke="rgba(196,164,78,0.08)" stroke-width="1.5" style="animation:ringExpand .5s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="170" cy="170" r="105" fill="none" stroke="rgba(196,164,78,0.14)" stroke-width="1.5" style="animation:ringExpand .5s .65s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="170" cy="170" r="70" fill="none" stroke="rgba(196,164,78,0.24)" stroke-width="1.8" style="animation:ringExpand .5s .5s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="170" cy="170" r="36" fill="rgba(196,164,78,0.1)" stroke="rgba(196,164,78,0.5)" stroke-width="2" style="animation:ringExpand .5s .35s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Center: advisor -->
+        <circle cx="170" cy="170" r="20" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2.5" style="animation:ringExpand .5s .2s ease both,glowBreath 3s 1s ease-in-out infinite;opacity:0;animation-fill-mode:both;"/>
+        <text x="170" y="177" text-anchor="middle" font-size="18" fill="#C4A44E" style="animation:fadeIn .4s .5s ease both;opacity:0;animation-fill-mode:both;">★</text>
+        <!-- Customer dots at different rings -->
+        <circle cx="170" cy="100" r="9" fill="rgba(196,164,78,0.35)" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s .7s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="230" cy="200" r="9" fill="rgba(196,164,78,0.35)" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s .75s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="110" cy="220" r="9" fill="rgba(196,164,78,0.35)" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s .8s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="240" cy="120" r="9" fill="rgba(196,164,78,0.35)" stroke="#C4A44E" stroke-width="1.5" style="animation:scaleIn .4s .85s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Curved lines connecting -->
+        <path d="M170 150 Q170 125 170 109" stroke="rgba(196,164,78,0.3)" stroke-width="1" stroke-dasharray="3 2" style="animation:fadeIn .4s .9s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M186 160 Q210 175 222 196" stroke="rgba(196,164,78,0.3)" stroke-width="1" stroke-dasharray="3 2" style="animation:fadeIn .4s .95s ease both;opacity:0;animation-fill-mode:both;"/>
+        <path d="M154 162 Q132 185 118 216" stroke="rgba(196,164,78,0.3)" stroke-width="1" stroke-dasharray="3 2" style="animation:fadeIn .4s 1s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Label center -->
+        <text x="170" y="207" text-anchor="middle" font-size="10" font-weight="700" fill="#C4A44E" letter-spacing="1.5" style="animation:fadeIn .4s .6s ease both;opacity:0;animation-fill-mode:both;">CỐ VẤN</text>
+        <!-- Label outer -->
+        <text x="170" y="320" text-anchor="middle" font-size="10" fill="rgba(196,164,78,0.5)" letter-spacing="1" style="animation:fadeIn .4s 1s ease both;opacity:0;animation-fill-mode:both;">ẢNH HƯỞNG LAN TỎA</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S15: TƯ DUY TỔNG HỢP (3 cards) -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s15">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Tư Duy Mới Trong Bán Hàng Bằng Vị Thế · Tổng Hợp</div>
+    <div class="a2 g3">
+      <div style="background:#1B3A5C;border-radius:14px;padding:26px 20px;text-align:center;border:2px solid rgba(196,164,78,0.3);position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.28);">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Tư Duy 01</div>
+          <div style="font-size:26px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;">Khách hàng mua <span style="color:#D4B46E;">nhân dạng</span></div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;">Nhân dạng mới = Ưu tiên mới.<br>New identity = New priority.</div>
+        </div>
+      </div>
+      <div style="background:#1B3A5C;border-radius:14px;padding:26px 20px;text-align:center;border:2px solid rgba(196,164,78,0.3);position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.28);">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Tư Duy 02</div>
+          <div style="font-size:26px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;">Không bán sản phẩm. Bán <span style="color:#D4B46E;">con đường.</span></div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;">Con đường = Rõ ràng = Tin tưởng.</div>
+        </div>
+      </div>
+      <div style="background:#1B3A5C;border-radius:14px;padding:26px 20px;text-align:center;border:2px solid #C4A44E;position:relative;overflow:hidden;box-shadow:0 12px 40px rgba(27,58,92,0.35);animation:glowBreath 3s 1s ease-in-out infinite;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.15) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;animation:pulseOp 2.2s ease-in-out infinite;">Tư Duy 03 · Cốt Lõi</div>
+          <div style="font-size:26px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;">Bán bằng <span style="color:#D4B46E;">ảnh hưởng.</span> Không dồn ép.</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;">Khách hàng tự phản chiếu sẽ tự thấy phù hợp.</div>
+        </div>
+      </div>
+    </div>
+    <div class="a3" style="margin-top:14px;background:#fffbf0;border:1.5px solid rgba(196,164,78,0.3);border-radius:12px;padding:14px 22px;text-align:center;">
+      <div style="font-size:18px;font-weight:900;color:#1B3A5C;">Người bán sản phẩm khiến khách hàng suy nghĩ. <span style="color:#8a6010;">Người bán Con đường khiến khách hàng hành động.</span></div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PHẦN S16 TRỞ ĐI — GIỮ NGUYÊN TỪ FILE CŨ (s16=section opener 3đct) -->
+<!-- ============================================================ -->
+<div class="slide bg-section" id="s16">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:16px;">Nội Dung Chính · 04</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
+      <div class="a2" style="font-size:56px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Phương Pháp<br>Dẫn Quyết Định<br><span style="color:#8a6010;">3 Điểm Chạm</span></div>
+      <div class="a2" style="font-size:260px;font-weight:900;line-height:0.85;color:rgba(168,128,32,0.18);pointer-events:none;letter-spacing:-12px;flex-shrink:0;margin-top:-10px;">04</div>
+    </div>
+    <div class="a3" style="width:100%;height:2px;background:linear-gradient(90deg,#9a7218,rgba(168,128,32,0.08));margin:22px 0 20px;"></div>
+    <div class="a4" style="font-size:20px;font-style:italic;font-weight:500;color:#3a3a3a;line-height:1.55;">Không dồn ép. Không thuyết phục. Khách hàng tự ra quyết định.</div>
+  </div>
+  <div class="footer-parchment">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S17: ĐIỂM CHẠM 1 — ĐỘNG LỰC -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s17">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:12px;">Điểm Chạm Số 1</div>
+    <div class="a2 g2">
+      <div>
+        <div style="font-size:54px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Chạm<br><span style="color:#8a6010;">Động Lực</span></div>
+        <div style="margin-top:14px;font-size:17px;font-weight:700;color:#1B3A5C;line-height:1.5;">Khách hàng không mua sản phẩm. Họ mua <span style="color:#8a6010;">"chính mình trong tương lai".</span></div>
+      </div>
+      <div>
+        <div style="background:#1B3A5C;border-radius:14px;padding:22px 20px;position:relative;overflow:hidden;height:100%;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">3 câu hỏi cốt lõi</div>
+            <div class="flow" style="gap:8px;">
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Vì sao anh/chị bắt đầu quan tâm đến điều này?</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Anh/chị đang muốn trở thành người như thế nào?</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Điều đó có ý nghĩa như thế nào với anh/chị?</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;background:rgba(196,164,78,0.15);border-radius:8px;padding:11px 14px;">
+              <div style="font-size:13px;font-weight:700;color:#D4B46E;letter-spacing:1px;text-transform:uppercase;">Mục tiêu cảm xúc</div>
+              <div style="font-size:15px;color:#fff;margin-top:4px;">Từ "Tôi quan tâm" đến <span style="color:#D4B46E;">"Tôi thực sự muốn điều đó"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S18: ĐIỂM CHẠM 2 — ĐIỂM NGHẼN -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s18">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:12px;">Điểm Chạm Số 2</div>
+    <div class="a2 g2">
+      <div>
+        <div style="font-size:54px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Chạm<br><span style="color:#8a6010;">Điểm Nghẽn</span></div>
+        <div style="margin-top:14px;font-size:17px;font-weight:700;color:#1B3A5C;line-height:1.5;">Khách hàng không dừng lại vì không muốn đi tiếp. Họ chưa nhìn rõ <span style="color:#8a6010;">"điều gì đang giữ họ lại".</span></div>
+      </div>
+      <div>
+        <div style="background:#1B3A5C;border-radius:14px;padding:22px 20px;position:relative;overflow:hidden;height:100%;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">3 câu hỏi cốt lõi</div>
+            <div class="flow" style="gap:8px;">
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Điều gì khiến anh/chị chưa đạt được điều mình mong muốn?</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Nếu điều đó tiếp tục kéo dài, chuyện gì sẽ xảy ra?</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Điều gì khiến anh/chị cảm thấy khó thay đổi nhất lúc này?</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;background:rgba(196,164,78,0.15);border-radius:8px;padding:11px 14px;">
+              <div style="font-size:13px;font-weight:700;color:#D4B46E;letter-spacing:1px;text-transform:uppercase;">Mục tiêu cảm xúc</div>
+              <div style="font-size:15px;color:#fff;margin-top:4px;">Từ "Tôi ổn mà" đến <span style="color:#D4B46E;">"Tôi cần thay đổi"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S19: ĐIỂM CHẠM 3 — CON ĐƯỜNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s19">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:12px;">Điểm Chạm Số 3</div>
+    <div class="a2 g2">
+      <div>
+        <div style="font-size:54px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Chạm<br><span style="color:#8a6010;">Con Đường</span></div>
+        <div style="margin-top:14px;font-size:17px;font-weight:700;color:#1B3A5C;line-height:1.5;">Đừng bán giải pháp. Hãy <span style="color:#8a6010;">thiết kế con đường.</span> Khi khách hàng nhìn thấy hướng đi và tin rằng họ có thể, nỗi sợ biến mất, hành động bắt đầu.</div>
+      </div>
+      <div>
+        <div style="background:#1B3A5C;border-radius:14px;padding:22px 20px;position:relative;overflow:hidden;height:100%;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Thiết kế con đường</div>
+            <div class="flow" style="gap:8px;">
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Đây là con đường chúng ta sẽ cùng đi: 1, 2, 3...</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Em sẽ là người dẫn đường và đồng hành</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:11px 14px;border-left:3px solid #C4A44E;">
+                <div style="font-size:16px;color:#fff;font-weight:600;">Con đường này đưa anh/chị tới nhân dạng mình mong muốn</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;background:rgba(196,164,78,0.15);border-radius:8px;padding:11px 14px;">
+              <div style="font-size:13px;font-weight:700;color:#D4B46E;letter-spacing:1px;text-transform:uppercase;">Mục tiêu cảm xúc</div>
+              <div style="font-size:15px;color:#fff;margin-top:4px;">Từ "Tôi không chắc" đến <span style="color:#D4B46E;">"Tôi có thể và muốn bắt đầu"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S20: SỨC MẠNH 3 ĐIỂM CHẠM -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s20">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Sức Mạnh Của 3 Điểm Chạm</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:16px;">Quyết định mua là kết quả của hành trình trải nghiệm</div>
+    <div class="a3 g2" style="gap:20px;align-items:stretch;">
+      <div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;height:100%;">
+          <div class="card" style="text-align:center;padding:20px 16px;">
+            <div style="font-size:13px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Kết quả 1</div>
+            <div style="font-size:17px;font-weight:700;color:#0d0d0d;line-height:1.4;">Khách hàng chia sẻ cảm xúc thật</div>
+          </div>
+          <div class="card" style="text-align:center;padding:20px 16px;">
+            <div style="font-size:13px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Kết quả 2</div>
+            <div style="font-size:17px;font-weight:700;color:#0d0d0d;line-height:1.4;">Khách hàng tự nhận ra và tự quyết định</div>
+          </div>
+          <div class="card" style="text-align:center;padding:20px 16px;">
+            <div style="font-size:13px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Kết quả 3</div>
+            <div style="font-size:17px;font-weight:700;color:#0d0d0d;line-height:1.4;">Nhân dạng mới, ưu tiên mới, hành động nhanh</div>
+          </div>
+          <div class="card" style="background:#1B3A5C;border-top:3px solid #C4A44E;text-align:center;padding:20px 16px;position:relative;overflow:hidden;">
+            <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:16px 16px;z-index:0;"></div>
+            <div style="position:relative;z-index:1;">
+              <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Kết quả 4</div>
+              <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.4;">Người bán hàng trở thành người dẫn đường</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:#1B3A5C;border:2px solid #C4A44E;border-radius:14px;padding:24px 22px;height:100%;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.3);">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.13) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Quy trình 3 Điểm Chạm</div>
+            <div class="flow" style="gap:10px;">
+              <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:8px;padding:12px 14px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#C4A44E;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#1B3A5C;flex-shrink:0;">1</div>
+                <div style="font-size:17px;font-weight:700;color:#fff;">Chạm Động Lực</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:8px;padding:12px 14px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#C4A44E;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#1B3A5C;flex-shrink:0;">2</div>
+                <div style="font-size:17px;font-weight:700;color:#fff;">Chạm Điểm Nghẽn</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:8px;padding:12px 14px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#C4A44E;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#1B3A5C;flex-shrink:0;">3</div>
+                <div style="font-size:17px;font-weight:700;color:#fff;">Chạm Con Đường</div>
+              </div>
+            </div>
+            <div style="margin-top:14px;padding:12px 14px;background:rgba(196,164,78,0.15);border-radius:8px;">
+              <div style="font-size:15px;color:#D4B46E;font-weight:700;font-style:italic;">Không dồn ép. Không thuyết phục. Khách hàng tự quyết định.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!-- SQT: QUY TRÌNH TƯ VẤN DẪN QUYẾT ĐỊNH 3 ĐIỂM CHẠM — TỔNG QUAN -->
+<!-- ============================================================ -->
+<div class="slide bg-agenda" id="sqt">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:10px;">Quy Trình Tư Vấn Dẫn Quyết Định 3 Điểm Chạm</div>
+    <div class="a2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+      <!-- Row 1: Kết nối + Chạm Động Lực -->
+      <div style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(196,164,78,0.25);border-radius:12px;padding:14px 18px;">
+        <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Kết Nối Tạo Tin Tưởng</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Bày tỏ trân trọng</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Câu chuyện khách hàng</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Lý do tìm tới</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(196,164,78,0.35);border-radius:12px;padding:14px 18px;">
+        <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Chạm Động Lực &amp; Nhân Dạng</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Ước mơ, mục tiêu</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Nhân dạng muốn trở thành</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Thang điểm 1/10</div>
+        </div>
+      </div>
+    </div>
+    <div class="a3" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+      <!-- Row 2: Chạm Điểm Nghẽn + Chạm Con Đường -->
+      <div style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(196,164,78,0.45);border-radius:12px;padding:14px 18px;">
+        <div style="font-size:11px;font-weight:900;color:#D4B46E;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Chạm Điểm Nghẽn</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Điều gì đang cản trở</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Nỗi đau hiện tại</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Chi phí trì hoãn</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Mức sẵn sàng đầu tư</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1.5px solid #C4A44E;border-radius:12px;padding:14px 18px;box-shadow:0 4px 18px rgba(196,164,78,0.15);">
+        <div style="font-size:11px;font-weight:900;color:#D4B46E;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Chạm Con Đường</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Lời mời tới con đường</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Cột mốc &amp; kết quả</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Nguồn lực bổ sung</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Câu chuyện thành công</div>
+        </div>
+      </div>
+    </div>
+    <div class="a4" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <!-- Row 3: Phản chiếu + Khách hàng thành công -->
+      <div style="background:rgba(196,164,78,0.08);border:1.5px solid rgba(196,164,78,0.3);border-radius:12px;padding:14px 18px;">
+        <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Phản Chiếu · Tăng Giá Trị · Cam Kết</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Khách xác nhận phù hợp</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Phản chiếu từ chối — REFLECT</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.05);border-radius:6px;padding:5px 9px;">Lời kết gọi (chốt)</div>
+        </div>
+      </div>
+      <div style="background:#C4A44E;border-radius:12px;padding:14px 18px;box-shadow:0 6px 24px rgba(196,164,78,0.35);">
+        <div style="font-size:11px;font-weight:900;color:#1B3A5C;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Khách Hàng Thành Công</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:#1B3A5C;background:rgba(27,58,92,0.1);border-radius:6px;padding:5px 9px;font-weight:700;">Khách ra quyết định</div>
+          <div style="font-size:12px;color:#1B3A5C;background:rgba(27,58,92,0.1);border-radius:6px;padding:5px 9px;font-weight:700;">Đồng hành đạt kết quả</div>
+          <div style="font-size:12px;color:#1B3A5C;background:rgba(27,58,92,0.1);border-radius:6px;padding:5px 9px;font-weight:700;">Chăm sóc dài hạn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PHẦN ỨNG DỤNG ECOLINK — SECTION OPENER -->
+<!-- ============================================================ -->
+<div class="slide bg-section" id="sec_eco">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:16px;">Ứng Dụng Thực Tế</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
+      <div class="a2" style="font-size:58px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Quy Trình<br>Tư Vấn<br><span style="color:#8a6010;">Ecolink</span></div>
+      <div class="a2" style="font-size:260px;font-weight:900;line-height:0.85;color:rgba(168,128,32,0.18);pointer-events:none;letter-spacing:-12px;flex-shrink:0;margin-top:-10px;">06</div>
+    </div>
+    <div class="a3" style="width:100%;height:2px;background:linear-gradient(90deg,#9a7218,rgba(168,128,32,0.08));margin:22px 0 20px;"></div>
+    <div class="a4" style="font-size:20px;font-style:italic;font-weight:500;color:#3a3a3a;line-height:1.55;">Câu hỏi kịch bản cụ thể cho từng giai đoạn tư vấn với phụ huynh.</div>
+  </div>
+  <div class="footer-parchment">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-1: TÂM THẾ TƯ VẤN -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco1">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="display:flex;align-items:center;gap:36px;">
+    <div style="flex:1;position:relative;z-index:3;">
+      <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Trước Khi Bắt Đầu · Tâm Thế Tư Vấn</div>
+      <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:16px;">Nhắc bản thân trước khi gặp phụ huynh</div>
+      <div class="a3" style="background:#1B3A5C;border-radius:14px;padding:22px 24px;border-left:5px solid #C4A44E;position:relative;overflow:hidden;margin-bottom:14px;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;font-size:19px;font-weight:700;color:#ffffff;line-height:1.6;font-style:italic;">"Mình không phải người giới thiệu khóa học. Mình là người giúp phụ huynh nhìn rõ con đang cần gì và lộ trình nào phù hợp nhất."</div>
+      </div>
+      <div class="a4 g2">
+        <div style="background:#f8f5ee;border-radius:12px;padding:16px 18px;border:1.5px solid rgba(168,128,32,0.18);">
+          <div style="font-size:12px;font-weight:900;letter-spacing:2px;color:#8a6010;text-transform:uppercase;margin-bottom:8px;">Mục tiêu đúng</div>
+          <div style="font-size:17px;font-weight:700;color:#0d0d0d;line-height:1.5;">Phụ huynh đi khỏi với sự rõ ràng trong đầu</div>
+          <div style="font-size:15px;color:#444;margin-top:6px;font-weight:500;">Khi họ rõ, họ tự chốt.</div>
+        </div>
+        <div style="background:#1B3A5C;border-radius:12px;padding:16px 18px;border:1.5px solid rgba(196,164,78,0.22);position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:12px;font-weight:900;letter-spacing:2px;color:#C4A44E;text-transform:uppercase;margin-bottom:8px;">Không phải</div>
+            <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.5;">Chốt hôm nay bằng mọi giá</div>
+            <div style="font-size:15px;color:rgba(255,255,255,0.82);margin-top:6px;font-weight:500;">Áp lực này phá vỡ vị thế.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Compass illustration -->
+    <div class="a2" style="flex-shrink:0;position:relative;z-index:3;">
+      <svg viewBox="0 0 240 240" width="210" height="210" fill="none">
+        <!-- Outer ring -->
+        <circle cx="120" cy="120" r="105" fill="rgba(196,164,78,0.05)" stroke="rgba(196,164,78,0.2)" stroke-width="1.5" style="animation:scaleIn .5s .2s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="120" cy="120" r="88" fill="rgba(196,164,78,0.04)" stroke="rgba(196,164,78,0.3)" stroke-width="2" style="animation:scaleIn .5s .3s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Compass face -->
+        <circle cx="120" cy="120" r="70" fill="#1B3A5C" stroke="#C4A44E" stroke-width="2.5" style="animation:scaleIn .5s .4s ease both;opacity:0;animation-fill-mode:both;animation:scaleIn .5s .4s ease both,glowBreath 4s 1s ease-in-out infinite;"/>
+        <circle cx="120" cy="120" r="70" fill="none" stroke="#C4A44E" stroke-width="2.5" style="animation:scaleIn .5s .4s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Dot pattern inside compass -->
+        <circle cx="120" cy="120" r="68" fill="url(#dotpat)" style="opacity:0.15;"/>
+        <!-- Compass cardinal directions -->
+        <text x="120" y="63" text-anchor="middle" font-size="11" font-weight="900" fill="#D4B46E" letter-spacing="1" style="animation:fadeIn .3s .7s ease both;opacity:0;animation-fill-mode:both;">PHỤ HUYNH</text>
+        <text x="175" y="125" text-anchor="start" font-size="10" font-weight="700" fill="rgba(196,164,78,0.6)" style="animation:fadeIn .3s .75s ease both;opacity:0;animation-fill-mode:both;">CON</text>
+        <text x="120" y="183" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(196,164,78,0.6)" style="animation:fadeIn .3s .8s ease both;opacity:0;animation-fill-mode:both;">KẾT QUẢ</text>
+        <text x="58" y="125" text-anchor="end" font-size="10" font-weight="700" fill="rgba(196,164,78,0.6)" style="animation:fadeIn .3s .85s ease both;opacity:0;animation-fill-mode:both;">LỘ TRÌNH</text>
+        <!-- Compass needle: luôn chỉ đến phụ huynh -->
+        <polygon points="120,58 114,120 120,126 126,120" fill="#C4A44E" style="animation:fadeIn .4s .9s ease both;opacity:0;animation-fill-mode:both;"/>
+        <polygon points="120,182 114,120 120,126 126,120" fill="rgba(196,164,78,0.25)" style="animation:fadeIn .4s .9s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Center dot -->
+        <circle cx="120" cy="120" r="6" fill="#fff" style="animation:scaleIn .3s 1s ease both;opacity:0;animation-fill-mode:both;"/>
+        <circle cx="120" cy="120" r="3" fill="#1B3A5C" style="animation:scaleIn .3s 1.05s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Tick marks -->
+        <line x1="120" y1="52" x2="120" y2="60" stroke="rgba(196,164,78,0.4)" stroke-width="2" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <line x1="188" y1="120" x2="180" y2="120" stroke="rgba(196,164,78,0.4)" stroke-width="2" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <line x1="120" y1="188" x2="120" y2="180" stroke="rgba(196,164,78,0.4)" stroke-width="2" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <line x1="52" y1="120" x2="60" y2="120" stroke="rgba(196,164,78,0.4)" stroke-width="2" style="animation:fadeIn .3s .6s ease both;opacity:0;animation-fill-mode:both;"/>
+        <!-- Label dưới -->
+        <text x="120" y="225" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6010" letter-spacing="1.5" style="animation:fadeIn .4s 1.1s ease both;opacity:0;animation-fill-mode:both;">LUÔN CHỈ VỀ PHỤ HUYNH</text>
+      </svg>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-2: KẾT NỐI TẠO TIN TƯỞNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco2">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Giai Đoạn Mở Đầu · Kết Nối Tạo Tin Tưởng</div>
+    <div class="a2" style="font-size:28px;font-weight:900;color:#0d0d0d;margin-bottom:4px;">Hỏi về con. Không hỏi về khóa học.</div>
+    <div class="a2" style="font-size:14px;color:#666;margin-bottom:14px;font-style:italic;">5 phút đầu quyết định phụ huynh có mở lòng hay không.</div>
+    <div class="a3 g2" style="gap:16px;">
+      <div>
+        <div style="display:inline-block;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(196,164,78,0.15);color:#7a5008;border:1px solid rgba(196,164,78,0.3);margin-bottom:10px;">Nên hỏi</div>
+        <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:12px 16px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Câu 1</div>
+          <div style="font-size:16px;color:#1a1a1a;line-height:1.55;font-style:italic;font-weight:600;">"Chị đến hôm nay chủ yếu muốn tìm hiểu cho bé hay bé đang có nhu cầu cụ thể rồi ạ?"</div>
+        </div>
+        <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:12px 16px;">
+          <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Câu 2</div>
+          <div style="font-size:16px;color:#1a1a1a;line-height:1.55;font-style:italic;font-weight:600;">"Bé nhà mình đang học lớp mấy ạ? Tính cách bé thế nào, bé có thích tiếng Anh không chị ơi?"</div>
+        </div>
+      </div>
+      <div>
+        <div style="display:inline-block;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(180,50,50,0.1);color:#8a2020;border:1px solid rgba(180,50,50,0.2);margin-bottom:10px;">Không mở bằng</div>
+        <div style="background:#fff5f5;border:1.5px solid rgba(180,50,50,0.15);border-left:4px solid #c0392b;border-radius:10px;padding:12px 16px;margin-bottom:8px;">
+          <div style="font-size:16px;color:#8a2020;line-height:1.55;font-weight:600;">Ưu đãi hoặc khuyến mãi</div>
+        </div>
+        <div style="background:#fff5f5;border:1.5px solid rgba(180,50,50,0.15);border-left:4px solid #c0392b;border-radius:10px;padding:12px 16px;margin-bottom:8px;">
+          <div style="font-size:16px;color:#8a2020;line-height:1.55;font-weight:600;">Giới thiệu chương trình ngay</div>
+        </div>
+        <div style="background:#fff5f5;border:1.5px solid rgba(180,50,50,0.15);border-left:4px solid #c0392b;border-radius:10px;padding:12px 16px;">
+          <div style="font-size:16px;color:#8a2020;line-height:1.55;font-weight:600;">Báo giá khi chưa hỏi gì</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-3: CHẠM ĐỘNG LỰC — 3 TẦNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco3">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Điểm Chạm 1 · Chạm Động Lực · Ecolink</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:16px;">Phía sau "muốn con học tiếng Anh" là gì?</div>
+    <div class="a3" style="display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:14px;">
+      <div style="width:220px;background:#e8e3d4;border:1.5px solid rgba(168,128,32,0.22);border-radius:10px 10px 0 0;padding:14px 18px;text-align:center;">
+        <div style="font-size:10px;font-weight:900;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Tầng 1 · Bề mặt</div>
+        <div style="font-size:16px;font-weight:900;color:#666;">Muốn con học tiếng Anh</div>
+      </div>
+      <div style="width:330px;background:#fef5d8;border:1.5px solid rgba(196,164,78,0.32);padding:14px 22px;text-align:center;">
+        <div style="font-size:10px;font-weight:900;color:#8a6010;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Tầng 2 · Sâu hơn</div>
+        <div style="font-size:16px;font-weight:900;color:#5a3a06;">Muốn con tự tin, giao tiếp được, điểm tốt</div>
+      </div>
+      <div style="width:440px;background:#1B3A5C;border:2px solid #C4A44E;border-radius:0 0 12px 12px;padding:16px 26px;text-align:center;position:relative;overflow:hidden;box-shadow:0 10px 36px rgba(27,58,92,0.32);">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.13) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:10px;font-weight:900;color:#C4A44E;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;animation:pulseOp 2.5s ease-in-out infinite;">Tầng 3 · Cần chạm đến đây</div>
+          <div style="font-size:16px;font-weight:900;color:#ffffff;">Muốn con có nền tảng tương lai. Muốn yên tâm như người cha/mẹ tốt.</div>
+        </div>
+      </div>
+    </div>
+    <div class="a4 concl" style="text-align:center;">Chạm đúng tầng 3, phụ huynh không còn phân vân về giá.</div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-4: CHẠM ĐỘNG LỰC — CÂU HỎI -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco4">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Điểm Chạm 1 · Bộ Câu Hỏi Kịch Bản</div>
+    <div class="a2" style="font-size:24px;font-weight:900;color:#0d0d0d;margin-bottom:14px;">Nhóm 1 · Khơi gợi động lực</div>
+    <div class="a3" style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px;">
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Khơi gợi ban đầu</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Điều gì khiến chị đang nghĩ đến việc cho bé học tiếng Anh ở thời điểm này ạ?"</div>
+      </div>
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Hỏi về tương lai của con</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Nếu con học được tiếng Anh tốt, chị mong điều đó sẽ giúp con như thế nào trong tương lai?"</div>
+      </div>
+    </div>
+    <div class="a3" style="font-size:22px;font-weight:900;color:#0d0d0d;margin-bottom:10px;">Nhóm 2 · Đào sâu + Xác nhận</div>
+    <div class="a4" style="display:flex;flex-direction:column;gap:8px;">
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Đào sâu ý nghĩa</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Khi chị nói muốn con tự tin hơn, điều đó có nghĩa như thế nào với chị ạ? Chị đang thấy con cần tự tin ở điểm nào?"</div>
+      </div>
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.3);border-left:4px solid #8a6010;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Xác nhận động lực</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Nếu tóm lại, điều chị mong nhất là [lặp lại lời phụ huynh]. Em hiểu đúng chưa ạ?" · "Theo thang 1 đến 10, điều này quan trọng với chị ở mức nào?"</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-5: CHẠM ĐIỂM NGHẼN — CÂU HỎI DẪN -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco5">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Điểm Chạm 2 · Chạm Điểm Nghẽn · Câu Hỏi Dẫn</div>
+    <div class="a2" style="font-size:24px;font-weight:900;color:#0d0d0d;margin-bottom:6px;">3 điểm nghẽn phổ biến nhất tại Ecolink</div>
+    <div class="a2" style="font-size:14px;color:#666;margin-bottom:14px;font-style:italic;">Con học mãi không tiến · Môi trường cũ không phù hợp · Chưa có lộ trình rõ ràng</div>
+    <div class="a3" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Câu hỏi khám phá</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Hiện tại con có đang học tiếng Anh ở đâu chưa ạ? Chị thấy tình hình đó như thế nào?"</div>
+      </div>
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.25);border-left:4px solid #C4A44E;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Câu hỏi dẫn nguyên nhân</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Theo chị, điều gì đang khiến con chưa đạt được điều chị mong muốn cho bé?"</div>
+      </div>
+      <div style="background:#fffbf0;border:1.5px solid rgba(196,164,78,0.3);border-left:4px solid #8a6010;border-radius:10px;padding:11px 16px;">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Câu xác nhận điểm nghẽn</div>
+        <div style="font-size:16px;color:#1a1a1a;line-height:1.5;font-style:italic;font-weight:600;">"Nếu em tóm lại, điều đang khiến con chưa đạt được như chị mong muốn là [điểm nghẽn]. Chị thấy em hiểu đúng không ạ?"</div>
+      </div>
+    </div>
+    <div class="a4" style="padding:11px 16px;background:#1B3A5C;border-radius:10px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+      <div style="position:relative;z-index:1;font-size:15px;font-weight:700;color:#fff;">Kiểm tra trước khi giới thiệu Ecolink: <span style="color:#D4B46E;">"Với những gì chị chia sẻ, chị có muốn tìm một hướng đi phù hợp hơn cho bé không ạ?"</span></div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-6: CHẠM ĐIỂM NGHẼN — CÁI GIÁ 3 LỚP -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco6">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Điểm Chạm 2 · Làm Rõ Cái Giá Của Việc Không Thay Đổi</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:16px;">3 lớp câu hỏi theo độ sâu tăng dần</div>
+    <div class="a3 flow">
+      <div class="frow">
+        <div class="fnum">L1</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:4px;">Hệ quả ngắn hạn</div>
+          <div class="ftxt" style="font-style:italic;font-size:16px;">"Nếu để thêm vài tháng mà không tìm được môi trường phù hợp, chị nghĩ tình hình của con sẽ như thế nào?"</div>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fnum">L2</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:4px;">Hệ quả dài hạn</div>
+          <div class="ftxt" style="font-style:italic;font-size:16px;">"Bé đang học lớp [X], nếu nhìn đến khi bé lên cấp tiếp theo, chị hình dung sẽ ra sao nếu tiếng Anh của con vẫn ở mức này?"</div>
+        </div>
+      </div>
+      <div class="frow" style="background:#fffbf0;border-color:rgba(196,164,78,0.35);">
+        <div class="fnum" style="background:#C4A44E;color:#fff;">L3</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:4px;">Kết nối với kỳ vọng phụ huynh đã chia sẻ</div>
+          <div class="ftxt" style="font-style:italic;font-size:16px;">"Chị vừa nói mong con [kỳ vọng]. Nếu thời gian tiếp tục qua mà con không có lộ trình rõ, điều đó có khiến chị lo ở điểm nào không ạ?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-7: CHẠM CON ĐƯỜNG — 4 BƯỚC -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco7">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Điểm Chạm 3 · Chạm Con Đường · 4 Bước</div>
+    <div class="a2" style="font-size:24px;font-weight:900;color:#0d0d0d;margin-bottom:14px;">Không thuyết trình chương trình. Nói bằng ngôn ngữ của phụ huynh.</div>
+    <div class="a3 flow">
+      <div class="frow">
+        <div class="fnum">1</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Nhắc lại bối cảnh bằng lời phụ huynh</div>
+          <div class="ftxt" style="font-style:italic;font-size:15px;">"Từ những gì chị chia sẻ, chị đang mong con [kỳ vọng], nhưng con đang gặp [điểm nghẽn]."</div>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fnum">2</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Xác nhận phù hợp trước khi trình bày (FIT)</div>
+          <div class="ftxt" style="font-style:italic;font-size:15px;">"Nếu có lộ trình có cấu trúc rõ, theo dõi từng bé và giáo viên đồng hành sát sao, chị thấy hướng đó phù hợp không ạ?"</div>
+        </div>
+      </div>
+      <div class="frow" style="background:#f0f6ff;border-color:rgba(27,58,92,0.2);">
+        <div class="fnum" style="background:#1B3A5C;color:#fff;">3</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#1B3A5C;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Vẽ lộ trình từng bước — Bán con đường, không bán sản phẩm</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px;">
+            <div style="background:#fff;border-radius:8px;padding:8px 10px;border:1.5px solid rgba(27,58,92,0.15);text-align:center;">
+              <div style="font-size:11px;font-weight:900;color:#1B3A5C;letter-spacing:1px;margin-bottom:3px;">BƯỚC 1</div>
+              <div style="font-size:13px;font-weight:700;color:#0d0d0d;line-height:1.4;">Kiểm tra đầu vào, xác định đúng level của con</div>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:8px 10px;border:1.5px solid rgba(27,58,92,0.15);text-align:center;">
+              <div style="font-size:11px;font-weight:900;color:#1B3A5C;letter-spacing:1px;margin-bottom:3px;">BƯỚC 2</div>
+              <div style="font-size:13px;font-weight:700;color:#0d0d0d;line-height:1.4;">Học theo lộ trình cá nhân hóa, tiến độ rõ ràng</div>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:8px 10px;border:1.5px solid rgba(27,58,92,0.15);text-align:center;">
+              <div style="font-size:11px;font-weight:900;color:#1B3A5C;letter-spacing:1px;margin-bottom:3px;">BƯỚC 3</div>
+              <div style="font-size:13px;font-weight:700;color:#0d0d0d;line-height:1.4;">Giáo viên theo dõi, báo cáo tiến độ định kỳ cho phụ huynh</div>
+            </div>
+            <div style="background:#1B3A5C;border-radius:8px;padding:8px 10px;border:2px solid #C4A44E;text-align:center;">
+              <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:1px;margin-bottom:3px;">KẾT QUẢ</div>
+              <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.4;">Con đạt được điều chị mong muốn</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;font-size:13px;color:#1B3A5C;font-style:italic;font-weight:600;">"Đây là hành trình chúng em sẽ đồng hành cùng bé và gia đình chị."</div>
+        </div>
+      </div>
+      <div class="frow" style="background:#fffbf0;border-color:rgba(196,164,78,0.35);">
+        <div class="fnum" style="background:#C4A44E;color:#fff;">4</div>
+        <div>
+          <div class="ftxt" style="font-size:12px;color:#8a6010;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Hỏi cảm nhận TRƯỚC khi báo giá</div>
+          <div class="ftxt" style="font-style:italic;font-size:15px;">"Với những gì em vừa chia sẻ, chị thấy hướng này có giải quyết được điều chị đang lo cho con không ạ?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ECO-PRACTICE: ROLEPLAY ECOLINK -->
+<!-- ============================================================ -->
+<div class="slide bg-interactive" id="eco_practice">
+  <div class="border-interactive"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div style="display:flex;align-items:center;margin-bottom:16px;" class="a1">
+      <div class="ibadge ibadge-practice">🎯 Thực Hành</div>
+      <div class="itime">20 Phút · Roleplay Ecolink</div>
+    </div>
+    <div class="a2" style="font-size:28px;font-weight:900;color:#ffffff;margin-bottom:16px;line-height:1.2;">3 Điểm Chạm với Phụ Huynh Ecolink</div>
+    <div class="a3" style="display:flex;flex-direction:column;gap:8px;">
+      <div class="istep"><div class="istep-num">1</div><div><div class="istep-txt">Trong bàn, 2 người đóng vai: 1 phụ huynh / 1 tư vấn viên Ecolink.</div><div class="istep-note">Trainer phát thẻ tình huống cho người đóng vai phụ huynh.</div></div></div>
+      <div class="istep"><div class="istep-num">2</div><div><div class="istep-txt">Tư vấn viên đi đủ 3 Điểm Chạm theo thứ tự.</div><div class="istep-note">Không báo giá trước khi phụ huynh xác nhận phù hợp ở Bước 2 Điểm Chạm 3.</div></div></div>
+      <div class="istep"><div class="istep-num">3</div><div><div class="istep-txt">Khi phụ huynh từ chối, áp dụng REFLECT để gỡ băn khoăn.</div></div></div>
+      <div class="istep"><div class="istep-num">4</div><div><div class="istep-txt">Người quan sát: câu nào chạm được, câu nào còn bề mặt.</div></div></div>
+      <div class="istep"><div class="istep-num">5</div><div><div class="istep-txt">Đổi vai sau 10 phút. Chia sẻ 1 điều học được trước cả bàn.</div></div></div>
+    </div>
+    <div class="icap a4">Mục tiêu: Phụ huynh tự nói ra quyết định mà không cần tư vấn viên thúc ép.</div>
+  </div>
+  <div class="footer-interactive">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- S21: DUY TRÌ VỊ THẾ — HÀNH TRÌNH TƯ VẤN -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s21">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Duy Trì Vị Thế Trong Toàn Bộ Hành Trình Tư Vấn</div>
+    <div class="a2" style="font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:16px;">Quyết định mua là kết quả của hành trình trải nghiệm</div>
+    <div class="a3" style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:14px;">
+      <div style="background:#f5f2e8;border-radius:10px;padding:14px 10px;text-align:center;border:1.5px solid rgba(168,128,32,0.2);">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">01</div>
+        <div style="font-size:14px;font-weight:700;color:#5a4a28;">Tiếp cận</div>
+      </div>
+      <div style="background:#f5f2e8;border-radius:10px;padding:14px 10px;text-align:center;border:1.5px solid rgba(168,128,32,0.2);">
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">02</div>
+        <div style="font-size:14px;font-weight:700;color:#5a4a28;">Phân loại</div>
+      </div>
+      <div style="background:#fef5d8;border-radius:10px;padding:14px 10px;text-align:center;border:1.5px solid rgba(196,164,78,0.35);">
+        <div style="font-size:11px;font-weight:900;color:#7a5008;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">03</div>
+        <div style="font-size:14px;font-weight:700;color:#5a3a06;">Hiểu sâu</div>
+      </div>
+      <div style="background:#fef5d8;border-radius:10px;padding:14px 10px;text-align:center;border:1.5px solid rgba(196,164,78,0.4);">
+        <div style="font-size:11px;font-weight:900;color:#7a5008;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">04</div>
+        <div style="font-size:14px;font-weight:700;color:#5a3a06;">Trình bày</div>
+      </div>
+      <div style="background:#fff8e0;border-radius:10px;padding:14px 10px;text-align:center;border:1.5px solid rgba(196,164,78,0.5);">
+        <div style="font-size:11px;font-weight:900;color:#7a5008;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">05</div>
+        <div style="font-size:14px;font-weight:700;color:#5a3006;">Xử lý từ chối</div>
+      </div>
+      <div style="background:#1B3A5C;border-radius:10px;padding:14px 10px;text-align:center;border:2px solid #C4A44E;box-shadow:0 6px 20px rgba(27,58,92,0.25);">
+        <div style="font-size:11px;font-weight:900;color:#C4A44E;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">06</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Chốt &amp; Chăm sóc</div>
+      </div>
+    </div>
+    <div class="a4">
+      <div style="background:#1B3A5C;border-radius:12px;padding:20px 24px;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+        <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-size:13px;font-weight:900;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Cách tư vấn thông thường</div>
+            <div style="height:3px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:8px;"></div>
+            <div style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.5;">Báo giá sớm, đưa ưu đãi, cố thuyết phục. Cảm xúc khách hàng giảm dần.</div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:900;color:#C4A44E;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Chuyên gia tư vấn chuyên nghiệp</div>
+            <div style="height:3px;background:#C4A44E;border-radius:2px;margin-bottom:8px;animation:lineGrow .5s .5s ease both;"></div>
+            <div style="font-size:15px;color:#fff;line-height:1.5;">Duy trì vị thế xuyên suốt. Cảm xúc khách hàng tăng dần đến quyết định.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S22: SECTION OPENER — REFLECT -->
+<!-- ============================================================ -->
+<div class="slide bg-section" id="s22">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div class="a1" style="font-size:12px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:16px;">Nội Dung Chính · 05</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;">
+      <div class="a2" style="font-size:62px;font-weight:900;color:#0d0d0d;line-height:1.05;text-transform:uppercase;letter-spacing:-2px;">Gỡ Rối<br><span style="color:#8a6010;">Bằng Phản Chiếu</span><br>REFLECT</div>
+      <div class="a2" style="font-size:260px;font-weight:900;line-height:0.85;color:rgba(168,128,32,0.18);pointer-events:none;letter-spacing:-12px;flex-shrink:0;margin-top:-10px;">05</div>
+    </div>
+    <div class="a3" style="width:100%;height:2px;background:linear-gradient(90deg,#9a7218,rgba(168,128,32,0.08));margin:22px 0 20px;"></div>
+    <div class="a4" style="font-size:20px;font-style:italic;font-weight:500;color:#3a3a3a;line-height:1.55;">Gỡ rối băn khoăn mà không cần thuyết phục thêm.</div>
+  </div>
+  <div class="footer-parchment">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S23: REFLECT — 7 BƯỚC -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="s23">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Gỡ Rối Băn Khoăn Bằng Phản Chiếu</div>
+    <div class="a2" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:12px;">
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;"><div style="font-size:20px;font-weight:900;color:#D4B46E;">R</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Repeat</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Lặp lại lời khách</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;"><div style="font-size:20px;font-weight:900;color:#D4B46E;">E</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Empathise</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Đồng cảm thật sự</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;"><div style="font-size:20px;font-weight:900;color:#D4B46E;">F</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Find Root</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Tìm nguyên nhân gốc</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;box-shadow:0 4px 14px rgba(27,58,92,0.2);"><div style="font-size:20px;font-weight:900;color:#D4B46E;">L</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Lead</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Dẫn bằng câu hỏi</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.5);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;"><div style="font-size:20px;font-weight:900;color:#D4B46E;">E</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Expand</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Mở rộng nhận thức</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#1B3A5C;border:2px solid rgba(196,164,78,0.6);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;"><div style="font-size:20px;font-weight:900;color:#D4B46E;">C</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Connect</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Kết nối nhân dạng</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:#C4A44E;border:2px solid #8a6010;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;box-shadow:0 4px 14px rgba(196,164,78,0.4);animation:pulseRing 2.5s ease-in-out infinite;"><div style="font-size:20px;font-weight:900;color:#1B3A5C;">T</div></div>
+        <div style="font-size:11px;font-weight:900;color:#8a6010;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">Transition</div>
+        <div style="font-size:13px;color:#333;line-height:1.4;font-weight:600;">Chuyển tiếp quyết định</div>
+      </div>
+    </div>
+    <div class="a3" style="background:#1B3A5C;border-radius:12px;padding:16px 20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+      <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;">
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Chị muốn về bàn với anh trước khi quyết định cho con, đúng không ạ?"</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Điều đó hoàn toàn dễ hiểu, quyết định cho con mình thì ai cũng muốn chắc chắn."</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Trong những gì mình trao đổi hôm nay, điều gì chị còn chưa thật sự yên tâm nhất ạ?"</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Nếu điều đó được giải đáp rõ, chị có thấy đây là lộ trình phù hợp cho bé không ạ?"</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Nếu bé tiếp tục thêm 1 học kỳ nữa mà không có lộ trình rõ, chị hình dung sẽ như thế nào?"</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;text-align:center;">"Chị vừa nói điều chị mong nhất là con tự tin và có nền tảng tốt. Người mẹ đó sẽ chọn điều gì cho con hôm nay?"</div>
+        <div style="font-size:13px;color:#D4B46E;font-style:italic;line-height:1.5;text-align:center;font-weight:700;">"Còn điều gì đang khiến chị chưa sẵn sàng cho con bắt đầu ngay hôm nay ạ?"</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+
+<!-- ECO-8: BÁO GIÁ ĐÚNG CÁCH + 3 TÌNH HUỐNG -->
+<!-- ============================================================ -->
+<div class="slide bg-content" id="eco8">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="a1" style="font-size:13px;font-weight:700;letter-spacing:3px;color:#8a6010;text-transform:uppercase;margin-bottom:10px;">Xử Lý Tình Huống Thực Tế · Khi Phụ Huynh Chưa Chốt Ngay</div>
+    <div class="a2" style="font-size:24px;font-weight:900;color:#0d0d0d;margin-bottom:14px;">3 tình huống hay gặp nhất</div>
+    <div class="a3 g3">
+      <div class="card">
+        <div class="cl">Tình huống 1</div>
+        <div class="ct">"Để suy nghĩ thêm" hoặc về hỏi chồng</div>
+        <div style="margin-top:8px;background:#fffbf0;border-radius:8px;padding:10px 12px;border-left:3px solid #C4A44E;">
+          <div style="font-size:14px;color:#1a1a1a;font-style:italic;line-height:1.5;">"Trong những gì mình trao đổi, điều gì chị thấy phù hợp nhất? Điều gì chị muốn rõ hơn?"</div>
+        </div>
+        <div style="font-size:14px;color:#444;margin-top:8px;font-weight:600;">Mục tiêu: tìm điểm nghẽn còn lại.</div>
+      </div>
+      <div class="card">
+        <div class="cl">Tình huống 2</div>
+        <div class="ct">"Học phí cao" hoặc chỗ kia rẻ hơn</div>
+        <div style="margin-top:8px;background:#fffbf0;border-radius:8px;padding:10px 12px;border-left:3px solid #C4A44E;">
+          <div style="font-size:14px;color:#1a1a1a;font-style:italic;line-height:1.5;">"Chị đang so sánh với mức nào ạ? Với điều chị mong cho con, mức đầu tư này chị thấy xứng không ạ?"</div>
+        </div>
+        <div style="font-size:14px;color:#444;margin-top:8px;font-weight:600;">Mục tiêu: kết nối về giá trị, không bào chữa.</div>
+      </div>
+      <div class="card">
+        <div class="cl">Tình huống 3</div>
+        <div class="ct">Muốn đăng ký gói ngắn trước</div>
+        <div style="margin-top:8px;background:#fffbf0;border-radius:8px;padding:10px 12px;border-left:3px solid #C4A44E;">
+          <div style="font-size:14px;color:#1a1a1a;font-style:italic;line-height:1.5;">"Chị đang lo điều gì cụ thể khiến chị muốn thử ngắn hạn trước ạ?"</div>
+        </div>
+        <div style="font-size:14px;color:#444;margin-top:8px;font-weight:600;">Mục tiêu: giải quyết nỗi lo thật, không chỉ chốt gói ngắn.</div>
+      </div>
+    </div>
+    <div class="a4" style="margin-top:12px;background:#1B3A5C;border-radius:10px;padding:12px 20px;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.1) 1.2px,transparent 1.2px);background-size:18px 18px;z-index:0;"></div>
+      <div style="position:relative;z-index:1;font-size:16px;font-weight:700;color:#fff;">Câu báo giá đúng vị thế: <span style="color:#D4B46E;">"Với lộ trình cá nhân hóa như vậy, học phí tại Ecolink là [X]. Chị thấy mức đầu tư đó có phù hợp với điều chị đang mong cho bé không ạ?"</span></div>
+    </div>
+  </div>
+  <div class="footer-light">THE TRUSTED ADVISOR · QUY TRÌNH TƯ VẤN ECOLINK · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+
+<!-- S24: PRACTICE ROLEPLAY -->
+<!-- ============================================================ -->
+<div class="slide bg-interactive" id="s24">
+  <div class="border-interactive"></div>
+  <div class="content" style="position:relative;z-index:3;">
+    <div style="display:flex;align-items:center;margin-bottom:16px;" class="a1">
+      <div class="ibadge ibadge-practice">🎯 Thực Hành</div>
+      <div class="itime">20 Phút · Roleplay Nhóm</div>
+    </div>
+    <div class="a2" style="font-size:28px;font-weight:900;color:#ffffff;margin-bottom:16px;line-height:1.2;">Luyện tập 3 Điểm Chạm + REFLECT</div>
+    <div class="a3" style="display:flex;flex-direction:column;gap:8px;">
+      <div class="istep"><div class="istep-num">1</div><div><div class="istep-txt">Trong bàn, 2 người đóng vai: 1 phụ huynh / 1 tư vấn viên Ecolink.</div><div class="istep-note">Trainer phát thẻ tình huống cho người đóng vai phụ huynh.</div></div></div>
+      <div class="istep"><div class="istep-num">2</div><div><div class="istep-txt">Tư vấn viên thực hành đủ 3 Điểm Chạm theo đúng thứ tự.</div><div class="istep-note">Không báo giá trước khi phụ huynh xác nhận phù hợp ở Điểm Chạm 3.</div></div></div>
+      <div class="istep"><div class="istep-num">3</div><div><div class="istep-txt">Khi phụ huynh từ chối, áp dụng REFLECT để gỡ băn khoăn.</div></div></div>
+      <div class="istep"><div class="istep-num">4</div><div><div class="istep-txt">Người quan sát nhận xét: câu nào chạm được, câu nào còn bề mặt.</div></div></div>
+      <div class="istep"><div class="istep-num">5</div><div><div class="istep-txt">Đổi vai sau 10 phút. Chia sẻ điểm học được trước cả bàn.</div></div></div>
+    </div>
+    <div class="icap a4">Mục tiêu: Phụ huynh tự nói ra quyết định mà không cần tư vấn viên thúc ép.</div>
+  </div>
+  <div class="footer-interactive">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S25: CLOSING -->
+<!-- ============================================================ -->
+<div class="slide bg-closing" id="s25">
+  <div class="bar-top"></div><div class="bar-left"></div><div class="bar-right"></div>
+  <div class="content">
+    <div class="eyebrow-d a1">3 Điều Cốt Lõi Mang Về</div>
+    <div class="trow a2">
+      <div class="tnum">01</div>
+      <div class="ttxt">Khách hàng không từ chối giá. Họ từ chối khi <span class="tgold">chưa đủ tin và chưa thấy rõ con đường.</span></div>
+    </div>
+    <div class="trow a3">
+      <div class="tnum">02</div>
+      <div class="ttxt">3 Điểm Chạm không phải quy trình bán hàng. Đây là <span class="tgold">hành trình dẫn dắt nhận thức</span> của khách hàng.</div>
+    </div>
+    <div class="trow a4">
+      <div class="tnum">03</div>
+      <div class="ttxt">Người tư vấn giỏi không thuyết phục. Họ <span class="tgold">đặt câu hỏi đúng để khách hàng tự thuyết phục mình.</span></div>
+    </div>
+    <div class="a5" style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(196,164,78,0.2);text-align:center;font-size:16px;color:rgba(196,164,78,0.65);font-style:italic;">Khách không mua thứ bạn có. Họ mua niềm tin rằng bạn biết cách đưa họ đến đích.</div>
+  </div>
+  <div class="footer-dark">THE TRUSTED ADVISOR · BÁN HÀNG BẰNG VỊ THẾ · COACH DUY NGUYEN × ECOLINK</div>
+</div>
+
+<!-- Particles -->
+<canvas id="pcv" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+<!-- Nav -->
+<div class="nav">
+  <span class="nav-counter" id="ctr">1 / 40</span>
+  <button class="nav-btn" onclick="go(-1)">← Trước</button>
+  <button class="nav-btn" onclick="go(1)">Tiếp →</button>
+  <button class="nav-btn" id="fsBtn" onclick="toggleFS()">⛶ Full</button>
+</div>
+
+<script>
+function isMobile(){return window.innerWidth<=768;}
+const slides=document.querySelectorAll('.slide');
+const N=slides.length;
+let cur=0;
+
+function retrigger(el){
+  el.querySelectorAll('.a1,.a2,.a3,.a4,.a5,.aL,.aR,.aS').forEach(e=>{
+    [...e.classList].filter(c=>/^a[1-5LRS]$/.test(c)).forEach(c=>{
+      e.classList.remove(c);void e.offsetWidth;e.classList.add(c);
+    });
+  });
+  el.querySelectorAll('[style*="animation"]').forEach(e=>{
+    const a=e.style.animation;if(!a||a.includes('infinite'))return;
+    e.style.animation='none';void e.offsetWidth;e.style.animation=a;
+  });
+}
+
+function showSlide(n){
+  if(isMobile())return;
+  slides[cur].style.display='none';
+  cur=(n+N)%N;
+  slides[cur].style.display='flex';
+  document.getElementById('ctr').textContent=(cur+1)+' / '+N;
+  retrigger(slides[cur]);
+}
+function go(d){showSlide(cur+d);}
+
+function applyMode(){
+  if(isMobile()){
+    document.body.style.overflow='auto';
+    document.body.style.height='auto';
+    slides.forEach(s=>{
+      s.style.display='flex';s.style.width='100%';s.style.height='auto';
+      s.style.minHeight='auto';s.style.position='relative';s.style.overflowX='hidden';
+    });
+    document.querySelector('.nav').style.display='none';
+    document.getElementById('pcv').style.display='none';
+  } else {
+    document.body.style.overflow='hidden';
+    document.body.style.height='100vh';
+    slides.forEach((s,i)=>{
+      s.style.display=i===cur?'flex':'none';
+      s.style.width='100vw';s.style.height='100vh';
+      s.style.minHeight='';s.style.position='relative';s.style.overflowX='hidden';
+    });
+    document.querySelector('.nav').style.display='flex';
+    document.getElementById('pcv').style.display='block';
+    document.getElementById('ctr').textContent=(cur+1)+' / '+N;
+  }
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')go(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(-1);
+});
+
+function toggleFS(){
+  if(!document.fullscreenElement){document.documentElement.requestFullscreen();document.getElementById('fsBtn').textContent='✕ Exit';}
+  else{document.exitFullscreen();document.getElementById('fsBtn').textContent='⛶ Full';}
+}
+
+(function(){
+  const cv=document.getElementById('pcv'),cx=cv.getContext('2d'),pts=[];
+  function resize(){cv.width=innerWidth;cv.height=innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  for(let i=0;i<28;i++)pts.push({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*2.2+0.7,
+    vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35-.12,
+    a:Math.random()*.38+.08,da:(Math.random()>.5?1:-1)*.003
+  });
+  function draw(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    pts.forEach(p=>{
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      cx.fillStyle=`rgba(196,164,78,${p.a})`;cx.fill();
+      p.x+=p.vx;p.y+=p.vy;p.a+=p.da;
+      if(p.a>.46||p.a<.07)p.da*=-1;
+      if(p.x<-4)p.x=cv.width+4;if(p.x>cv.width+4)p.x=-4;
+      if(p.y<-4)p.y=cv.height+4;if(p.y>cv.height+4)p.y=-4;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+applyMode();
+window.addEventListener('resize',()=>applyMode());
+</script>
+
+<style>
+@media(max-width:768px){
+  body{overflow:auto !important;height:auto !important;}
+  .slide{overflow:visible !important;padding:40px 18px 52px !important;width:100% !important;height:auto !important;min-height:auto !important;}
+  .content{padding:0 !important;max-width:100% !important;}
+  .bar-left,.bar-right,.border-practice{display:none !important;}
+  [style*="font-size:50px"]{font-size:28px !important;line-height:1.15 !important;}
+  [style*="font-size:54px"]{font-size:28px !important;}
+  [style*="font-size:62px"]{font-size:30px !important;}
+  [style*="font-size:56px"]{font-size:28px !important;}
+  [style*="font-size:44px"]{font-size:24px !important;}
+  [style*="font-size:260px"]{display:none !important;}
+  .g2,.g3{grid-template-columns:1fr !important;gap:12px !important;}
+  .card,.card-dark{padding:14px !important;}
+  .ct,.ct-d{font-size:14px !important;}
+  .cb,.cb-d{font-size:13px !important;}
+  .frow{padding:10px 12px !important;}
+  .ftxt{font-size:13px !important;}
+  .stxt{font-size:14px !important;}
+  .srow{padding:10px 14px !important;}
+  .trow{padding:12px 14px !important;}
+  .ttxt{font-size:14px !important;}
+  .tnum{font-size:22px !important;min-width:24px !important;}
+  .footer-dark,.footer-light,.footer-parchment{font-size:10px !important;letter-spacing:1.5px !important;height:40px !important;}
+}
+</style>
+</body>
+</html>
