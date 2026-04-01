@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đề Xuất Đào Tạo · Ecolink × Coach Duy Nguyễn</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#f7f4ee;color:#1a1a1a;min-height:100vh;}
+
+/* ── COVER ──────────────────────────────────────────────── */
+.cover{background:#1B3A5C;background-image:radial-gradient(rgba(196,164,78,0.18) 1.3px,transparent 1.3px);background-size:30px 30px;position:relative;overflow:hidden;padding:72px 0 60px;min-height:340px;display:flex;align-items:center;}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(27,58,92,0.4) 20%,transparent 70%);pointer-events:none;}
+.cover-inner{max-width:960px;margin:0 auto;padding:0 56px;position:relative;z-index:2;}
+.cover-label{font-size:10px;font-weight:700;letter-spacing:3.5px;color:rgba(196,164,78,0.7);text-transform:uppercase;margin-bottom:10px;}
+.cover-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:18px;}
+.cover-title{font-size:40px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;margin-bottom:8px;}
+.cover-title span{color:#D4B46E;}
+.cover-sub{font-size:18px;font-weight:400;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;line-height:1.5;}
+.cover-bar{width:72px;height:2px;background:linear-gradient(90deg,#C4A44E,rgba(196,164,78,0.2));margin-bottom:22px;}
+.cover-meta{display:flex;gap:20px;flex-wrap:wrap;}
+.cover-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.07);border:1px solid rgba(196,164,78,0.25);border-radius:20px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.7);font-weight:600;}
+.cover-num{position:absolute;right:56px;bottom:-20px;font-size:220px;font-weight:900;color:rgba(196,164,78,0.06);line-height:1;pointer-events:none;letter-spacing:-12px;}
+
+/* ── BREADCRUMB ─────────────────────────────────────────── */
+.breadcrumb{background:#fff;border-bottom:1px solid rgba(168,128,32,0.15);padding:12px 0;}
+.breadcrumb-inner{max-width:960px;margin:0 auto;padding:0 56px;display:flex;align-items:center;gap:8px;font-size:12px;color:#999;letter-spacing:1px;text-transform:uppercase;}
+.breadcrumb a{color:rgba(168,128,32,0.7);text-decoration:none;}
+.breadcrumb a:hover{color:#8a6010;}
+.breadcrumb-sep{color:#ccc;}
+
+/* ── MAIN ───────────────────────────────────────────────── */
+.main{max-width:960px;margin:0 auto;padding:52px 56px 80px;}
+
+/* ── SECTION ────────────────────────────────────────────── */
+.sec{margin-bottom:48px;}
+.sec-label{font-size:10px;font-weight:900;letter-spacing:3px;color:#C4A44E;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px;}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(196,164,78,0.3),transparent);}
+.sec-title{font-size:26px;font-weight:900;color:#0d0d0d;margin-bottom:14px;line-height:1.25;}
+.sec-body{font-size:16px;color:#3a3a3a;line-height:1.75;}
+
+/* ── CALLOUT ─────────────────────────────────────────────── */
+.callout{background:#1B3A5C;border-radius:14px;padding:24px 28px;margin:20px 0;position:relative;overflow:hidden;}
+.callout::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.3px,transparent 1.3px);background-size:22px 22px;z-index:0;}
+.callout-inner{position:relative;z-index:1;}
+.callout-label{font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:8px;}
+.callout-text{font-size:16px;font-weight:600;color:#fff;line-height:1.65;}
+.callout-text em{color:#D4B46E;font-style:normal;}
+
+/* ── INSIGHT CARDS ───────────────────────────────────────── */
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+.insight-card{background:#fff;border:1.5px solid rgba(168,128,32,0.15);border-top:3px solid #C4A44E;border-radius:12px;padding:18px 20px;}
+.insight-num{font-size:28px;font-weight:900;color:rgba(196,164,78,0.25);margin-bottom:6px;line-height:1;}
+.insight-title{font-size:14px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.insight-text{font-size:14px;color:#555;line-height:1.6;}
+
+/* ── FOCUS BLOCKS ────────────────────────────────────────── */
+.focus-list{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.focus-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:10px;padding:14px 18px;}
+.focus-num{width:32px;height:32px;border-radius:8px;background:#1B3A5C;color:#C4A44E;font-weight:900;font-size:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.focus-title{font-size:15px;font-weight:900;color:#0d0d0d;margin-bottom:3px;}
+.focus-text{font-size:14px;color:#555;line-height:1.6;}
+
+/* ── SESSION CARDS ───────────────────────────────────────── */
+.session-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:16px 0;}
+.session-card{background:#fff;border:1.5px solid rgba(168,128,32,0.15);border-radius:14px;overflow:hidden;}
+.session-header{background:#1B3A5C;padding:16px 20px;position:relative;overflow:hidden;}
+.session-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.3px,transparent 1.3px);background-size:18px 18px;z-index:0;}
+.session-header-inner{position:relative;z-index:1;}
+.session-num{font-size:10px;font-weight:900;letter-spacing:2px;color:rgba(196,164,78,0.65);text-transform:uppercase;margin-bottom:4px;}
+.session-title{font-size:16px;font-weight:900;color:#fff;line-height:1.3;}
+.session-time{font-size:12px;color:rgba(196,164,78,0.6);margin-top:6px;}
+.session-body{padding:16px 20px;}
+.session-goals{margin-bottom:12px;}
+.session-goal-label{font-size:10px;font-weight:900;letter-spacing:2px;color:#8a6010;text-transform:uppercase;margin-bottom:6px;}
+.session-goal-item{font-size:13px;color:#555;line-height:1.6;padding-left:12px;position:relative;margin-bottom:3px;}
+.session-goal-item::before{content:'·';position:absolute;left:0;color:#C4A44E;font-weight:900;}
+.session-topics{display:flex;flex-direction:column;gap:6px;}
+.session-topic{background:#f8f5ee;border-left:3px solid #C4A44E;border-radius:0 6px 6px 0;padding:8px 12px;font-size:13px;color:#333;font-weight:600;line-height:1.4;}
+
+/* ── 3 ĐIỂM CHẠM ─────────────────────────────────────────── */
+.touch-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:16px 0;}
+.touch-card{background:#fff;border:1.5px solid rgba(168,128,32,0.15);border-radius:12px;overflow:hidden;text-align:center;}
+.touch-header{padding:16px 16px 12px;}
+.touch-num{font-size:32px;font-weight:900;color:rgba(196,164,78,0.2);line-height:1;}
+.touch-name{font-size:14px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.touch-body{padding:0 16px 16px;}
+.touch-text{font-size:13px;color:#555;line-height:1.6;}
+.touch-card.highlight-touch{background:#1B3A5C;border-color:rgba(196,164,78,0.3);}
+.touch-card.highlight-touch .touch-num{color:rgba(196,164,78,0.25);}
+.touch-card.highlight-touch .touch-name{color:#D4B46E;}
+.touch-card.highlight-touch .touch-text{color:rgba(255,255,255,0.75);}
+
+/* ── OUTPUT BLOCKS ───────────────────────────────────────── */
+.output-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:16px 0;}
+.output-card{background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 18px;}
+.output-icon{font-size:22px;margin-bottom:8px;}
+.output-title{font-size:13px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.output-text{font-size:13px;color:#555;line-height:1.6;}
+
+/* ── COST ────────────────────────────────────────────────── */
+.cost-box{background:#fff;border:2px solid rgba(196,164,78,0.3);border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.cost-left .cost-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#8a6010;text-transform:uppercase;margin-bottom:8px;}
+.cost-left .cost-title{font-size:22px;font-weight:900;color:#0d0d0d;margin-bottom:4px;}
+.cost-left .cost-sub{font-size:14px;color:#777;}
+.cost-right{text-align:right;}
+.cost-amount{font-size:42px;font-weight:900;color:#1B3A5C;line-height:1;letter-spacing:-1px;}
+.cost-vat{font-size:13px;color:#999;margin-top:4px;}
+.cost-total{font-size:16px;font-weight:700;color:#8a6010;margin-top:6px;}
+
+/* ── RESPONSIBILITY ──────────────────────────────────────── */
+.resp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+.resp-card{background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;}
+.resp-title{font-size:13px;font-weight:900;color:#8a6010;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.resp-item{font-size:14px;color:#444;line-height:1.6;padding-left:14px;position:relative;margin-bottom:5px;}
+.resp-item::before{content:'✓';position:absolute;left:0;color:#C4A44E;font-weight:900;font-size:12px;}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.cta-bar{background:#1B3A5C;border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden;}
+.cta-bar::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(196,164,78,0.12) 1.3px,transparent 1.3px);background-size:22px 22px;z-index:0;}
+.cta-bar-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px;}
+.cta-text{font-size:18px;font-weight:700;color:#fff;line-height:1.4;}
+.cta-text span{color:#D4B46E;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#C4A44E;color:#1B3A5C;font-size:14px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:.15s;flex-shrink:0;}
+.cta-btn:hover{background:#D4B46E;}
+
+/* ── QUESTION ITEMS ─────────────────────────────────────── */
+.q-item{display:flex;gap:10px;align-items:flex-start;background:#f8f5ee;border-radius:8px;padding:10px 12px;}
+.q-num{font-size:10px;font-weight:900;color:#C4A44E;min-width:26px;padding-top:1px;letter-spacing:1px;flex-shrink:0;}
+.q-text{font-size:13px;color:#333;line-height:1.55;font-weight:500;}
+
+/* ── FOOTER ─────────────────────────────────────────────────*/
+.footer{background:#1B3A5C;padding:24px 56px;text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(196,164,78,0.5);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer a{color:rgba(196,164,78,0.6);text-decoration:none;}
+.footer a:hover{color:#C4A44E;}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:768px){
+  .cover-inner,.breadcrumb-inner,.main,.footer{padding-left:20px;padding-right:20px;}
+  .cover-title{font-size:26px;}
+  .cover-num{display:none;}
+  .insight-grid,.session-grid,.touch-grid,.output-grid,.resp-grid{grid-template-columns:1fr;}
+  .cost-box{flex-direction:column;text-align:center;}
+  .cost-right{text-align:center;}
+  .cta-bar-inner{flex-direction:column;text-align:center;}
+  .main{padding-top:32px;padding-bottom:48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-num">EC</div>
+  <div class="cover-inner">
+    <div class="cover-label">Đề Xuất Đào Tạo Nội Bộ</div>
+    <div class="cover-eyebrow">Next Step Group × Hệ Thống Anh Ngữ Quốc Tế Ecolink</div>
+    <div class="cover-title">Nâng Cấp Tư Vấn<br><span>Bằng Vị Thế</span></div>
+    <div class="cover-sub">Dẫn dắt để khách hàng tự chốt</div>
+    <div class="cover-bar"></div>
+    <div class="cover-meta">
+      <div class="cover-chip">📅 19/03/2026</div>
+      <div class="cover-chip">📍 Nam Định</div>
+      <div class="cover-chip">👥 ~100 học viên</div>
+      <div class="cover-chip">⏱ 2 Buổi · 1 Ngày</div>
+      <div class="cover-chip">🎓 Coach Duy Nguyễn</div>
+    </div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Other Trainings</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="index.html">Ecolink</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Đề Xuất Đào Tạo</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- 1. BỐI CẢNH -->
+  <div class="sec">
+    <div class="sec-label">01 · Bối Cảnh Và Thực Trạng</div>
+    <div class="sec-title">Ecolink đang ở đâu và cần gì?</div>
+    <div class="sec-body">Ecolink là hệ thống Anh ngữ đã có vị thế tại Nam Định, với hơn 10 năm kinh nghiệm, chất lượng đào tạo tốt và nhiều cơ sở trên địa bàn. Doanh số vẫn đang tốt, nhưng doanh nghiệp nhìn thấy nhu cầu nâng cấp quan trọng: không chỉ giữ kết quả hiện tại, mà nâng chuẩn cách đội ngũ tư vấn để tăng sức thuyết phục bằng vị thế thay vì phụ thuộc vào giảm giá hay khuyến mãi.</div>
+
+    <div class="insight-grid" style="margin-top:20px;">
+      <div class="insight-card">
+        <div class="insight-num">80%</div>
+        <div class="insight-title">Tư vấn theo cách cũ</div>
+        <div class="insight-text">Chỉ khoảng 20% đội ngũ tư vấn theo phong cách hiểu khách, kết nối sâu. 80% còn lại vẫn thiên về cách tiếp cận thông thường chưa tạo được vị thế.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">Giá</div>
+        <div class="insight-title">Không phải vấn đề cốt lõi</div>
+        <div class="insight-text">Trên thị trường vẫn có những đơn vị giá cao hơn nhưng chốt tốt hơn. Vấn đề nằm ở cách xây dựng niềm tin và dẫn dắt phụ huynh ra quyết định.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">Quán<br>tính</div>
+        <div class="insight-title">Đội ngũ lâu năm bị "cũ hóa"</div>
+        <div class="insight-text">Có kinh nghiệm, nhưng chưa thực sự thay đổi cách tiếp cận trong bối cảnh khách hàng ngày càng có nhiều lựa chọn và cân nhắc kỹ hơn.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">Ưu<br>đãi</div>
+        <div class="insight-title">Phụ thuộc vào khuyến mãi</div>
+        <div class="insight-text">Tỉ lệ chốt còn phụ thuộc nhiều vào giảm giá và ưu đãi. Khi không có những yếu tố này, khả năng chốt giảm rõ rệt.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-inner">
+        <div class="callout-label">Nhận định cốt lõi</div>
+        <div class="callout-text">Phụ huynh không chỉ mua khóa học. Họ đang tìm kiếm <em>sự yên tâm, kết quả cho con và một lộ trình học tập được đảm bảo lâu dài</em>. Đội ngũ tư vấn cần được trang bị để đáp ứng đúng nhu cầu sâu đó.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MỤC TIÊU -->
+  <div class="sec">
+    <div class="sec-label">02 · Mục Tiêu Và Định Hướng</div>
+    <div class="sec-title">Chương trình này tạo ra điều gì?</div>
+    <div class="sec-body">Không chỉ truyền đạt thêm kiến thức, mà tạo ra sự chuyển hóa thực tế trong tư duy, cách thức tư vấn và khả năng xử lý tình huống.</div>
+
+    <div class="focus-list" style="margin-top:20px;">
+      <div class="focus-item">
+        <div class="focus-num">1</div>
+        <div>
+          <div class="focus-title">Làm mới tinh thần và năng lượng nghề</div>
+          <div class="focus-text">Tạo "luồng sinh khí mới" cho đội ngũ lâu năm. Giúp nhìn lại vai trò tư vấn, lấy lại cảm hứng và sẵn sàng tiếp cận khách hàng theo tiêu chuẩn mới cao hơn.</div>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-num">2</div>
+        <div>
+          <div class="focus-title">Thay đổi tư duy bán hàng</div>
+          <div class="focus-text">Dịch chuyển từ "tư vấn chương trình, báo giá, đưa ưu đãi, thuyết phục" sang vai trò người tư vấn có vị thế: tạo dựng niềm tin, thấu hiểu tâm lý, nắm rõ động lực, dẫn dắt khách hàng tự ra quyết định.</div>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-num">3</div>
+        <div>
+          <div class="focus-title">Ứng dụng phương pháp 3 Điểm Chạm</div>
+          <div class="focus-text">Giúp người tư vấn chạm đúng vào động lực, điểm nghẽn và con đường của phụ huynh, tạo ra cuộc trò chuyện có chiều sâu hơn và tăng khả năng tự ra quyết định.</div>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-num">4</div>
+        <div>
+          <div class="focus-title">Tháo gỡ khúc mắc thực tế</div>
+          <div class="focus-text">Giải đáp trực tiếp các tình huống đội ngũ đang gặp. Chỉnh lại cách hỏi, cách phản hồi, cách tư duy và cách giữ vị thế khi trao đổi với phụ huynh.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. NỘI DUNG -->
+  <div class="sec">
+    <div class="sec-label">03 · Nội Dung Đào Tạo</div>
+    <div class="sec-title">Cấu trúc 2 buổi trong 1 ngày</div>
+
+    <div class="session-grid">
+      <!-- BUỔI 1 -->
+      <div class="session-card">
+        <div class="session-header">
+          <div class="session-header-inner">
+            <div class="session-num">Buổi 1 · Sáng</div>
+            <div class="session-title">Bán Hàng Bằng Vị Thế: Tư Duy Tư Vấn Tin Cậy</div>
+            <div class="session-time">9:00 – 12:00 · 3 tiếng học + thảo luận</div>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="session-goals">
+            <div class="session-goal-label">Mục tiêu</div>
+            <div class="session-goal-item">Lên tinh thần và tái tạo năng lượng cho đội ngũ</div>
+            <div class="session-goal-item">Thay đổi tư duy từ "tư vấn khóa học" sang "dẫn dắt bằng vị thế"</div>
+            <div class="session-goal-item">Nắm vững Điểm Chạm 1: Động Lực</div>
+          </div>
+          <div class="session-topics">
+            <div class="session-topic">Làm mới tinh thần và tâm thế với nghề</div>
+            <div class="session-topic">Tư duy bán hàng bằng vị thế, sự khác biệt cốt lõi</div>
+            <div class="session-topic">Bản chất ra quyết định của phụ huynh</div>
+            <div class="session-topic">Điểm Chạm 1: Chạm Động Lực của phụ huynh</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUỔI 2 -->
+      <div class="session-card">
+        <div class="session-header">
+          <div class="session-header-inner">
+            <div class="session-num">Buổi 2 · Chiều</div>
+            <div class="session-title">Chạm Điểm Nghẽn và Chạm Con Đường: Gỡ Case Thực Tế</div>
+            <div class="session-time">14:00 – 17:00 · 3 tiếng học + hỏi đáp</div>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="session-goals">
+            <div class="session-goal-label">Mục tiêu</div>
+            <div class="session-goal-item">Nắm vững Điểm Chạm 2 và Điểm Chạm 3</div>
+            <div class="session-goal-item">Giải đáp các khúc mắc thực tế trong công việc</div>
+            <div class="session-goal-item">Gỡ tình huống đội ngũ đang gặp khi tư vấn phụ huynh</div>
+          </div>
+          <div class="session-topics">
+            <div class="session-topic">Điểm Chạm 2: Chạm Điểm Nghẽn của con</div>
+            <div class="session-topic">Điểm Chạm 3: Chạm Con Đường, lộ trình tại Ecolink</div>
+            <div class="session-topic">Hỏi đáp và gỡ tình huống thực tế từ đội ngũ</div>
+            <div class="session-topic">Thực hành xử lý từ chối bằng phương pháp REFLECT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 ĐIỂM CHẠM -->
+    <div style="margin-top:24px;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:2px;color:#8a6010;text-transform:uppercase;margin-bottom:14px;">Phương Pháp Cốt Lõi · 3 Điểm Chạm</div>
+      <div class="touch-grid">
+        <div class="touch-card">
+          <div class="touch-header">
+            <div class="touch-num">01</div>
+            <div class="touch-name">Chạm Động Lực</div>
+          </div>
+          <div class="touch-body">
+            <div class="touch-text">Phụ huynh thật sự mong điều gì cho con? Không chỉ là học tiếng Anh, mà là sự tự tin, khả năng giao tiếp, nền tảng tương lai và sự tự hào của cha mẹ.</div>
+          </div>
+        </div>
+        <div class="touch-card highlight-touch">
+          <div class="touch-header">
+            <div class="touch-num">02</div>
+            <div class="touch-name">Chạm Điểm Nghẽn</div>
+          </div>
+          <div class="touch-body">
+            <div class="touch-text">Điều gì đang khiến con chưa đạt được điều đó? Môi trường chưa phù hợp, chưa có lộ trình rõ, thiếu sự đồng hành, từng học nơi khác chưa hiệu quả.</div>
+          </div>
+        </div>
+        <div class="touch-card">
+          <div class="touch-header">
+            <div class="touch-num">03</div>
+            <div class="touch-name">Chạm Con Đường</div>
+          </div>
+          <div class="touch-body">
+            <div class="touch-text">Làm sao để phụ huynh thấy rõ lộ trình phù hợp tại Ecolink? Không phải để ép chốt, mà để khách hàng thấy rõ hướng đi và an tâm hơn khi quyết định.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ĐẦU RA -->
+  <div class="sec">
+    <div class="sec-label">04 · Đầu Ra Và Giá Trị</div>
+    <div class="sec-title">Doanh nghiệp nhận được gì?</div>
+
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-icon">🧠</div>
+        <div class="output-title">Đầu ra hữu hình</div>
+        <div class="output-text">Hệ tư duy bán hàng bằng vị thế trong môi trường giáo dục. Khung phương pháp 3 Điểm Chạm để ứng dụng vào tư vấn khóa học. Nền tảng chung để ban lãnh đạo chuẩn hóa cách tư vấn.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">🔄</div>
+        <div class="output-title">Hành vi và trải nghiệm</div>
+        <div class="output-text">Đội ngũ được làm mới tinh thần và có thêm động lực. Điều chỉnh cách tiếp cận từ giới thiệu chương trình sang tư vấn có vị thế. Chất lượng cuộc trò chuyện với phụ huynh được cải thiện.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">📈</div>
+        <div class="output-title">Kinh doanh (kỳ vọng)</div>
+        <div class="output-text">Giảm dần sự phụ thuộc vào giảm giá và ưu đãi. Nâng chất lượng tư vấn và củng cố hình ảnh chuyên nghiệp của Ecolink. Chuẩn hóa cách tiếp cận khách hàng bền vững hơn.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px;">
+      <div class="callout-inner">
+        <div class="callout-label">Lưu ý quan trọng</div>
+        <div class="callout-text">Đây là chương trình đào tạo 1 ngày với mục tiêu tạo nhận thức và định hướng lại tư duy. Mức độ chuyển hóa trong thực tế sẽ phụ thuộc vào <em>sự chủ động thay đổi của từng cá nhân</em> và sự theo sát, đồng hành từ đội ngũ quản lý sau chương trình.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TRÁCH NHIỆM -->
+  <div class="sec">
+    <div class="sec-label">05 · Bàn Giao Và Trách Nhiệm</div>
+    <div class="sec-title">Cam kết từ hai phía</div>
+
+    <div class="resp-grid">
+      <div class="resp-card">
+        <div class="resp-title">Next Step Group cam kết</div>
+        <div class="resp-item">Cá nhân hóa nội dung đào tạo theo đề xuất của doanh nghiệp</div>
+        <div class="resp-item">Đồng hành trong quá trình điều chỉnh hành vi tư vấn</div>
+        <div class="resp-item">Không triển khai đào tạo mang tính hình thức</div>
+        <div class="resp-item">Bám sát các case thực tế của đội ngũ Ecolink</div>
+      </div>
+      <div class="resp-card">
+        <div class="resp-title">Phía doanh nghiệp</div>
+        <div class="resp-item">Bố trí đội ngũ tham gia đầy đủ</div>
+        <div class="resp-item">Tạo điều kiện áp dụng nội dung đã học vào thực tế</div>
+        <div class="resp-item">Phối hợp cung cấp thông tin về các vấn đề phát sinh</div>
+        <div class="resp-item">Hỗ trợ điều chỉnh nội dung đào tạo khi cần</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CÂU HỎI TRƯỚC CHƯƠNG TRÌNH -->
+  <div class="sec">
+    <div class="sec-label">06 · Tổng Hợp Câu Hỏi Trước Chương Trình</div>
+    <div class="sec-title">27 câu hỏi thực tế từ đội ngũ Ecolink</div>
+    <div class="sec-body" style="margin-bottom:20px;">Trước chương trình, toàn bộ đội ngũ đã gửi những câu hỏi về tình huống thực tế họ đang gặp. Đây là nền tảng để Coach Duy cá nhân hóa nội dung và bám sát vào đúng những điểm mà đội ngũ cần được tháo gỡ nhất.</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+      <!-- Nhóm 1: Vị thế và mở đầu -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;grid-column:1/-1;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;">Nhóm 1 · Vị thế và mở đầu buổi tư vấn<span style="flex:1;height:1px;background:rgba(196,164,78,0.2);display:block;"></span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="q-item"><span class="q-num">01</span><span class="q-text">Phụ huynh hỏi thẳng học phí ngay từ đầu. Làm thế nào giữ vị thế dẫn dắt mà không bị rơi vào báo giá đơn thuần?</span></div>
+          <div class="q-item"><span class="q-num">08</span><span class="q-text">Làm thế nào để giữ thế chủ động ngay từ khi bắt đầu buổi tư vấn, loại bỏ nỗi "sợ mất" khách hàng đối với nhân sự mới?</span></div>
+          <div class="q-item"><span class="q-num">26</span><span class="q-text">Khách chủ động ép hỏi giá ngay từ đầu. Dùng kỹ thuật nào để trì hoãn mà không gây khó chịu?</span></div>
+          <div class="q-item"><span class="q-num">27</span><span class="q-text">Tư vấn viên trẻ chưa có nhiều kinh nghiệm sống, làm sao xây dựng vị thế dẫn dắt trước phụ huynh lớn tuổi, thành đạt và cá tính mạnh?</span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm 2: Xây dựng niềm tin -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;">Nhóm 2 · Xây dựng niềm tin</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="q-item"><span class="q-num">02</span><span class="q-text">Phụ huynh từng có trải nghiệm không tốt và mất niềm tin vào trung tâm. Cách tái xây dựng niềm tin trong lần tư vấn đầu tiên?</span></div>
+          <div class="q-item"><span class="q-num">06</span><span class="q-text">Sale mới chưa có nhiều kinh nghiệm, làm sao xây dựng vị thế nhanh mà vẫn chân thực?</span></div>
+          <div class="q-item"><span class="q-num">20b</span><span class="q-text">Phụ huynh "tẩu hỏa nhập ma" vì đi quá nhiều trung tâm: "Chỗ nào cũng nói tốt, tôi biết tin ai?" Dùng câu hỏi dẫn dắt để họ tự thấy mình là lựa chọn đúng?</span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm 3: Xử lý từ chối và trì hoãn -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;">Nhóm 3 · Xử lý từ chối và trì hoãn</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="q-item"><span class="q-num">03</span><span class="q-text">"Để suy nghĩ thêm": cách phản hồi giữ quyền dẫn dắt và tăng khả năng quay lại chốt?</span></div>
+          <div class="q-item"><span class="q-num">11</span><span class="q-text">Khách thiện chí cao trong buổi tư vấn nhưng lấy lý do hỏi ý kiến người thân, chưa tiếp cận được người ra quyết định thực sự?</span></div>
+          <div class="q-item"><span class="q-num">15</span><span class="q-text">"Để chị về hỏi ý kiến chồng/con" rồi im lặng luôn. Thăm dò xem đó là lý do thật hay từ chối khéo, và dẫn dắt quyết định ngay tại chỗ?</span></div>
+          <div class="q-item"><span class="q-num">16</span><span class="q-text">Khách đã đồng ý nhưng đến lúc đóng phí lại "lặn mất tăm". Đặt câu hỏi nào để phá băng và khơi gợi lại?</span></div>
+          <div class="q-item"><span class="q-num">25</span><span class="q-text">Đã giải đáp hết nhu cầu nhưng khách chưa quyết định. Vấn đề cốt lõi nằm ở sản phẩm, giá hay cách tư vấn?</span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm 4: Áp lực giá và so sánh -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;">Nhóm 4 · Áp lực giá và so sánh</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="q-item"><span class="q-num">07</span><span class="q-text">Phụ huynh so sánh học phí hoặc chọn học tại nhà/khóa lẻ. Làm sao để họ tự nhận ra hạn chế mà vẫn cảm thấy được tôn trọng?</span></div>
+          <div class="q-item"><span class="q-num">09</span><span class="q-text">Khách chỉ quan tâm về giá. Làm thế nào giữ chân mà không cần giảm giá quá sâu?</span></div>
+          <div class="q-item"><span class="q-num">10</span><span class="q-text">Phụ huynh so sánh chi phí với trung tâm khác. Dùng vị thế như thế nào để chạm đến thay đổi quyết định?</span></div>
+          <div class="q-item"><span class="q-num">12</span><span class="q-text">Làm sao thoát khỏi mindset "chốt bằng ưu đãi" mà vẫn giữ được cơ hội chốt?</span></div>
+          <div class="q-item"><span class="q-num">14</span><span class="q-text">Khách đòi giảm giá hoặc đòi ưu đãi bằng người quen đang học. Từ chối thế nào vẫn giữ được sự chuyên nghiệp?</span></div>
+          <div class="q-item"><span class="q-num">24</span><span class="q-text">Phụ huynh nói "học phí cao": giải thích như thế nào để họ thấy mức đầu tư là hợp lý và xứng đáng?</span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm 5: Sau học thử và gói ngắn hạn -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;">Nhóm 5 · Sau học thử và gói ngắn hạn</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="q-item"><span class="q-num">05</span><span class="q-text">Sau buổi học thử, đâu là điểm chạm quan trọng nhất quyết định phụ huynh có đăng ký, và tối ưu điểm đó như thế nào?</span></div>
+          <div class="q-item"><span class="q-num">13</span><span class="q-text">Phụ huynh không quan trọng kinh tế nhưng chỉ muốn nộp tiền gói ngắn hạn để thử. Xử lý thế nào?</span></div>
+          <div class="q-item"><span class="q-num">18</span><span class="q-text">Con thích, mẹ đồng ý hôm nay nhưng hôm sau lại viện cớ con không chịu đi. Khơi gợi lại nhu cầu và tìm lý do từ chối thực sự?</span></div>
+          <div class="q-item"><span class="q-num">19</span><span class="q-text">Khách chỉ muốn đăng ký khóa lẻ ngắn hạn vì chưa chắc kết quả. Làm sao để họ tin tưởng và gửi gắm con học lâu dài?</span></div>
+          <div class="q-item"><span class="q-num">21</span><span class="q-text">Phụ huynh cứ xin học thử hết buổi này đến buổi khác mới quyết định. Dùng câu hỏi vị thế để chặn đứng "dùng thử vô thời hạn"?</span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm 6: Dẫn dắt quyết định -->
+      <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;">Nhóm 6 · Dẫn dắt quyết định</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="q-item"><span class="q-num">04</span><span class="q-text">Phụ huynh đã thích lớp, đã thấy phù hợp nhưng vẫn chưa đăng ký. Những yếu tố cốt lõi nào và nên tác động vào điểm nào?</span></div>
+          <div class="q-item"><span class="q-num">17</span><span class="q-text">Mẹ rất muốn cho con học nhưng về nhà bố/ông bà phản đối. Làm thế nào để thuyết phục?</span></div>
+          <div class="q-item"><span class="q-num">22</span><span class="q-text">"Con thích nhưng để xem lịch Toán Văn đã, tiếng Anh chưa vội". Dùng câu hỏi nào để xoay chuyển thứ tự ưu tiên?</span></div>
+          <div class="q-item"><span class="q-num">23</span><span class="q-text">Thời điểm nào trong cuộc tư vấn là phù hợp nhất để chốt, và câu nói nào để chốt mà không gây áp lực?</span></div>
+          <div class="q-item"><span class="q-num">20a</span><span class="q-text">"Cho con học cô giáo ở trường vừa rẻ vừa được cô để ý, học trung tâm làm gì cho tốn?". Dẫn dắt để phụ huynh thấy sự khác biệt?</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout" style="margin-top:20px;">
+      <div class="callout-inner">
+        <div class="callout-label">Cách sử dụng trong chương trình</div>
+        <div class="callout-text">Toàn bộ 27 câu hỏi này sẽ được Coach Duy xử lý trực tiếp trong buổi chiều (phần hỏi đáp và gỡ tình huống thực tế). Nội dung buổi sáng sẽ cung cấp nền tảng tư duy để buổi chiều <em>không chỉ dừng ở câu trả lời, mà học viên hiểu được nguyên tắc phía sau để tự xử lý các tình huống tương tự.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div class="cta-bar-inner">
+      <div class="cta-text">Xem slide nội dung đào tạo đã được thiết kế <span>riêng cho Ecolink</span></div>
+      <a class="cta-btn" href="ecolink-workshop-final.html" target="_blank">▶ Xem Slide Workshop</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>Next Step Group · Coach Duy Nguyễn</div>
+  <div><a href="index.html">← Quay lại Other Trainings</a></div>
+  <div>19/03/2026</div>
+</div>
+
+</body>
+</html>
