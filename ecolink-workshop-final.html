@@ -1906,25 +1906,91 @@ window.addEventListener('resize',()=>applyMode());
   body{overflow:auto !important;height:auto !important;}
   .slide{overflow:visible !important;padding:40px 18px 52px !important;width:100% !important;height:auto !important;min-height:auto !important;}
   .content{padding:0 !important;max-width:100% !important;}
-  .bar-left,.bar-right,.border-practice{display:none !important;}
+  .bar-left,.bar-right,.border-practice,.border-interactive{display:none !important;}
+
+  /* Font scaling — cover/section large titles */
   [style*="font-size:50px"]{font-size:28px !important;line-height:1.15 !important;}
-  [style*="font-size:54px"]{font-size:28px !important;}
-  [style*="font-size:62px"]{font-size:30px !important;}
-  [style*="font-size:56px"]{font-size:28px !important;}
+  [style*="font-size:52px"]{font-size:28px !important;line-height:1.15 !important;}
+  [style*="font-size:54px"]{font-size:28px !important;line-height:1.15 !important;}
+  [style*="font-size:56px"]{font-size:28px !important;line-height:1.15 !important;}
+  [style*="font-size:58px"]{font-size:28px !important;line-height:1.15 !important;}
+  [style*="font-size:62px"]{font-size:28px !important;line-height:1.15 !important;}
   [style*="font-size:44px"]{font-size:24px !important;}
+  [style*="font-size:42px"]{font-size:22px !important;}
+  [style*="font-size:40px"]{font-size:22px !important;}
+  [style*="font-size:46px"]{font-size:24px !important;}
+  [style*="font-size:36px"]{font-size:20px !important;}
+  [style*="font-size:32px"]{font-size:19px !important;}
+  [style*="font-size:30px"]{font-size:18px !important;}
+  [style*="font-size:28px"]{font-size:17px !important;}
+  [style*="font-size:26px"]{font-size:16px !important;}
+  [style*="font-size:24px"]{font-size:16px !important;}
+  [style*="font-size:22px"]{font-size:15px !important;}
   [style*="font-size:260px"]{display:none !important;}
+  [style*="font-size:220px"]{display:none !important;}
+  [style*="font-size:200px"]{display:none !important;}
+
+  /* Grids collapse to single column */
   .g2,.g3{grid-template-columns:1fr !important;gap:12px !important;}
+
+  /* Inline grids: 5-col, 9-col hành trình nhận thức etc */
+  [style*="grid-template-columns:repeat(5"]{grid-template-columns:1fr 1fr !important;gap:8px !important;}
+  [style*="grid-template-columns:repeat(6"]{grid-template-columns:1fr 1fr !important;gap:8px !important;}
+  [style*="grid-template-columns:repeat(7"]{grid-template-columns:1fr 1fr !important;gap:8px !important;}
+  [style*="grid-template-columns:1fr 40px 1fr"]{grid-template-columns:1fr !important;gap:8px !important;}
+  [style*="grid-template-columns:1fr 28px 1fr"]{grid-template-columns:1fr !important;gap:8px !important;}
+  [style*="grid-template-columns:1fr 8px 1fr"]{grid-template-columns:1fr !important;gap:8px !important;}
+  /* 5-step flow map with arrows: hide arrows, stack boxes */
+  [style*="grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr"]{grid-template-columns:1fr 1fr !important;gap:8px !important;}
+  /* Arrow cells in 5-step grid: hide them on mobile */
+  [style*="display:flex;align-items:center;justify-content:center;"]{display:none !important;}
+
+  /* Flex side-by-side layouts → column */
+  [style*="display:flex;align-items:center;gap:48px"]{flex-direction:column !important;gap:16px !important;}
+  [style*="display:flex;align-items:center;gap:36px"]{flex-direction:column !important;gap:14px !important;}
+  [style*="display:flex;align-items:center;gap:28px"]{flex-direction:column !important;gap:14px !important;}
+  [style*="display:flex;align-items:flex-start;gap:28px"]{flex-direction:column !important;gap:14px !important;}
+  [style*="display:flex;align-items:flex-start;gap:36px"]{flex-direction:column !important;gap:14px !important;}
+  [style*="display:flex;align-items:flex-start;gap:32px"]{flex-direction:column !important;gap:14px !important;}
+
+  /* SVG illustrations: scale down */
+  svg{max-width:100% !important;height:auto !important;}
+  [style*="flex-shrink:0;position:relative;z-index:3"]{flex-shrink:1 !important;width:100% !important;display:flex;justify-content:center;}
+
+  /* Cards */
   .card,.card-dark{padding:14px !important;}
   .ct,.ct-d{font-size:14px !important;}
   .cb,.cb-d{font-size:13px !important;}
+
+  /* Flow / Steps */
   .frow{padding:10px 12px !important;}
   .ftxt{font-size:13px !important;}
   .stxt{font-size:14px !important;}
+  .snote{font-size:12px !important;}
   .srow{padding:10px 14px !important;}
+
+  /* Takeaway (closing) */
   .trow{padding:12px 14px !important;}
   .ttxt{font-size:14px !important;}
   .tnum{font-size:22px !important;min-width:24px !important;}
-  .footer-dark,.footer-light,.footer-parchment{font-size:10px !important;letter-spacing:1.5px !important;height:40px !important;}
+
+  /* Interactive slides */
+  .ibadge{font-size:11px !important;padding:6px 14px !important;}
+  .itime{font-size:12px !important;}
+  .istep-txt{font-size:14px !important;}
+  .istep-note{font-size:12px !important;}
+  .icap{font-size:15px !important;}
+  .ibox{padding:10px 12px !important;}
+  .ibox-answer{font-size:20px !important;padding:10px 12px !important;}
+
+  /* Cover specific */
+  .eyebrow,.eyebrow-d{font-size:16px !important;margin-bottom:12px !important;}
+  .concl{font-size:14px !important;}
+  .pcap{font-size:15px !important;}
+  .gold-line{margin:12px auto !important;}
+
+  /* Footer */
+  .footer-dark,.footer-light,.footer-parchment,.footer-interactive{font-size:10px !important;letter-spacing:1.5px !important;height:40px !important;}
 }
 </style>
 </body>

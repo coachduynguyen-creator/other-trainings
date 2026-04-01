@@ -136,14 +136,92 @@ body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#f7f4ee;co
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media(max-width:768px){
-  .cover-inner,.breadcrumb-inner,.main,.footer{padding-left:20px;padding-right:20px;}
-  .cover-title{font-size:26px;}
+  /* Layout */
+  .cover-inner,.breadcrumb-inner,.main{padding-left:16px;padding-right:16px;}
+  .footer{padding-left:16px;padding-right:16px;flex-direction:column;gap:6px;height:auto;padding-top:14px;padding-bottom:14px;}
+  .main{padding-top:28px;padding-bottom:48px;}
+
+  /* Cover */
+  .cover{padding:44px 0 36px;}
+  .cover-title{font-size:26px;letter-spacing:-0.5px;}
+  .cover-sub{font-size:15px;}
   .cover-num{display:none;}
-  .insight-grid,.session-grid,.touch-grid,.output-grid,.resp-grid{grid-template-columns:1fr;}
-  .cost-box{flex-direction:column;text-align:center;}
-  .cost-right{text-align:center;}
-  .cta-bar-inner{flex-direction:column;text-align:center;}
-  .main{padding-top:32px;padding-bottom:48px;}
+  .cover-meta{gap:8px;}
+  .cover-chip{font-size:11px;padding:5px 12px;}
+
+  /* Breadcrumb */
+  .breadcrumb-inner{font-size:11px;gap:5px;}
+
+  /* Section titles */
+  .sec-title{font-size:20px;}
+  .sec-body{font-size:15px;}
+
+  /* All 2-column grids collapse to 1 column */
+  .insight-grid,
+  .session-grid,
+  .touch-grid,
+  .output-grid,
+  .resp-grid{grid-template-columns:1fr !important;}
+
+  /* Question groups: the outer 2-col grid */
+  .sec > div[style*="grid-template-columns:1fr 1fr"],
+  .sec > div > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Full-width question group (grid-column:1/-1) stays full width */
+  [style*="grid-column:1/-1"]{grid-column:auto !important;}
+
+  /* Question group inner 2-col grids also collapse */
+  [style*="display:grid;grid-template-columns:1fr 1fr;gap:8px"]{
+    grid-template-columns:1fr !important;
+    gap:8px !important;
+  }
+
+  /* About box */
+  .about{flex-direction:column;gap:10px;padding:20px;}
+  .about-title{font-size:14px;}
+  .about-text{font-size:13px;}
+
+  /* Callout */
+  .callout{padding:18px 18px;}
+  .callout-text{font-size:14px;}
+
+  /* Focus list */
+  .focus-title{font-size:14px;}
+  .focus-text{font-size:13px;}
+
+  /* Session cards */
+  .session-title{font-size:14px;}
+  .session-time{font-size:11px;}
+  .session-goal-item{font-size:12px;}
+  .session-topic{font-size:12px;padding:6px 10px;}
+
+  /* Touch cards */
+  .touch-name{font-size:13px;}
+  .touch-text{font-size:13px;}
+
+  /* Output cards */
+  .output-title{font-size:12px;}
+  .output-text{font-size:13px;}
+
+  /* Responsibility */
+  .resp-title{font-size:12px;}
+  .resp-item{font-size:13px;}
+
+  /* Question items */
+  .q-text{font-size:13px;}
+
+  /* Question outer + inner grids */
+  .q-grid{grid-template-columns:1fr !important;}
+  .q-inner-grid{grid-template-columns:1fr !important;}
+  [style*="grid-column:1/-1"]{grid-column:auto !important;}
+
+  /* CTA */
+  .cta-bar{padding:20px 18px;}
+  .cta-bar-inner{flex-direction:column;text-align:center;gap:14px;}
+  .cta-text{font-size:15px;}
+  .cta-btn{width:100%;justify-content:center;}
 }
 </style>
 </head>
@@ -409,12 +487,12 @@ body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#f7f4ee;co
     <div class="sec-title">27 câu hỏi thực tế từ đội ngũ Ecolink</div>
     <div class="sec-body" style="margin-bottom:20px;">Trước chương trình, toàn bộ đội ngũ đã gửi những câu hỏi về tình huống thực tế họ đang gặp. Đây là nền tảng để Coach Duy cá nhân hóa nội dung và bám sát vào đúng những điểm mà đội ngũ cần được tháo gỡ nhất.</div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <div class="q-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
 
       <!-- Nhóm 1: Vị thế và mở đầu -->
       <div style="background:#fff;border:1.5px solid rgba(168,128,32,0.12);border-radius:12px;padding:18px 20px;grid-column:1/-1;">
         <div style="font-size:10px;font-weight:900;letter-spacing:2.5px;color:#C4A44E;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;">Nhóm 1 · Vị thế và mở đầu buổi tư vấn<span style="flex:1;height:1px;background:rgba(196,164,78,0.2);display:block;"></span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div class="q-inner-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <div class="q-item"><span class="q-num">01</span><span class="q-text">Phụ huynh hỏi thẳng học phí ngay từ đầu. Làm thế nào giữ vị thế dẫn dắt mà không bị rơi vào báo giá đơn thuần?</span></div>
           <div class="q-item"><span class="q-num">08</span><span class="q-text">Làm thế nào để giữ thế chủ động ngay từ khi bắt đầu buổi tư vấn, loại bỏ nỗi "sợ mất" khách hàng đối với nhân sự mới?</span></div>
           <div class="q-item"><span class="q-num">26</span><span class="q-text">Khách chủ động ép hỏi giá ngay từ đầu. Dùng kỹ thuật nào để trì hoãn mà không gây khó chịu?</span></div>
